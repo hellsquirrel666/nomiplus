@@ -1,0 +1,464 @@
+﻿/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Colores que puedes usar en el tema */
+/*
+    #377896
+    #f7f3ef
+    #f2e6e1
+    #b6b0bd
+    #2b5c7a
+    #4ea3a3
+*/
+/*#endregion Colores que puedes usar en el tema */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Predeterminado del template */
+/* El contenido de la página maestra siempre tendrá un ancho fijo */
+.fixed-width-placeholder {
+    width: 1024px !important;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/* Responsive: fix padding under menu after resize */
+@media screen and (max-width: 767px) {
+    body { padding-top: 60px; }
+}
+@media screen and (min-width:768px) and (max-width: 991px) {
+    body { padding-top: 100px; }
+}
+@media screen and (min-width: 992px) {
+    body { padding-top: 50px; }
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    /*max-width: 300px;*/
+    margin: 4px 4px 2px 4px;
+}
+
+/* Alínea los labels a la altura de los inputs */
+.label-for-input {
+    line-height: 32px;
+}
+
+.btn-primary {
+    color: #f7f3ef !important;
+    background-color: #2b5c7a !important;
+}
+
+/* Custom footer */
+.custom_footer {
+    background-color: #214e53;
+    color: #f7f3ef;
+    padding: 5px 10px 0px 10px;
+    min-height: 30px;
+}
+
+    .custom_footer .container {
+        height: 20px;
+    }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+/*#endregion Predeterminado del template*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Customización de elementos de bootstrap*/
+
+/* Custom jumbotron backgroud-color */
+.jumbotron {
+    background-color: #f7f3ef;
+}
+
+/* Custom jumbotron size*/
+.jumbotron-small {
+    padding: 11px 30px 13px 30px !important;
+    margin: 10px initial 25px initial !important;
+}
+    /* Custom header size */
+    .jumbotron-small h2 {
+        margin: 0;
+    }
+
+/* Custom center bootstrap column */
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+/* Custom bootstrap rows */
+.padded_row > [class*='col-'] {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+/* Custom form-inline margin */
+.form-inline {
+    margin: 25px 0 25px 0;
+}
+
+    /* Custom form-group padding */
+    .form-inline .form-group {
+        padding: 0px 5px 5px 5px;
+    }
+
+.large-table {
+    margin: 15px 0px 15px 10px;
+    width: 100% !important;
+}
+
+    .large-table .formulario-md {
+        width: 160px;
+    }
+
+    .large-table .formulario-sm {
+        width: 120px;
+    }
+
+.small-table {
+    margin: 15px 0px 15px 10px;
+    width: 577px;
+}
+
+    .small-table .formulario-md {
+        width: 160px !important;
+    }
+
+    .small-table .formulario-sm {
+        width: 120px;
+    }
+
+    .small-table .btn-default {
+        margin-right: 11px;
+    }
+
+.help {
+    cursor: help !important;
+}
+
+.center-table-70 {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-table-50 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table .table-hover .table-borderless {
+    border: none !important;
+    border-color: white !important;
+    border: none !important;
+    border-color: white !important;
+}
+
+    .table .table-hover .table-borderless .tr .td {
+        padding: 0 8px 0 8px !important;
+    }
+
+.small-grid-button {
+    height: 25px !important;
+    width: 25px !important;
+    padding: 0 2px 0 0 !important;
+    margin: 3px 0 0 0 !important;
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: none;
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border-bottom-color: rgb(178, 196, 212);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: collapse;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(178, 196, 212);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(178, 196, 212);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(178, 196, 212);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset, rgba(102, 172, 229, 0.156863) 0px 0px 2.07407402992249px 0px;
+    box-sizing: border-box;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-transform: none;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.15s, 0.15s;
+    transition-property: border-color, box-shadow;
+    transition-timing-function: ease-in-out, ease-in-out;
+    vertical-align: middle;
+    width: 25px;
+    word-spacing: 0px;
+    -webkit-writing-mode: horizontal-tb;
+}
+
+.centrar-vertical {
+    vertical-align:middle !important;
+}
+
+.centrar-vertical-top {
+    vertical-align: top;
+}
+.centrar-vertical-small {
+    vertical-align:middle !important;
+    font-size:small !important;
+}
+
+/*fileupload customization*/
+.nice {
+    border: solid #2b5c7a 1px;
+    background: #fff;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.nice .NFI-button {
+    height: 40px;
+    line-height: 40px;
+    background: #2b5c7a;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 30%;
+    font-weight: 700;
+}
+
+.nice .NFI-filename {
+    width: 70%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+}
+.disabled-dropdown-item {
+    cursor: not-allowed !important;
+}
+.aspNetDisabled{
+    cursor: not-allowed !important;
+    color: darkgray !important;
+}
+/*#endregion Customización de elementos de bootstrap*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Customización de colores de bootstrap para las barras de navegación */
+.navbar-default {
+    background-color: #2b5c7a;
+    border-color: #f7f3ef;
+}
+
+    .navbar-default .navbar-brand {
+        color: #f7f3ef;
+    }
+
+        .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+            color: #f7f3ef;
+        }
+
+    .navbar-default .navbar-text {
+        color: #f7f3ef;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #f7f3ef;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            color: #f7f3ef;
+        }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: #333333;
+        background-color: #f7f3ef;
+    }
+
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+        color: #333333;
+        background-color: #f7f3ef;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: #f7f3ef;
+    }
+
+        .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+            background-color: #f7f3ef;
+        }
+
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #f7f3ef;
+        }
+
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #f7f3ef;
+    }
+
+    .navbar-default .navbar-link {
+        color: #f7f3ef;
+    }
+
+        .navbar-default .navbar-link:hover {
+            color: #333333;
+        }
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #f7f3ef;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #333333;
+            background-color: #f7f3ef;
+        }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #333333;
+        background-color: #f7f3ef;
+    }
+}
+/*#endregion Customización de colores de bootstrap para las barras de navegación */
+
+/*#region Customización de los elementos del BootstrapMenu */
+/* Color del dropdown durante eventos */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f7f3ef;
+    background-color: #2b5c7a;
+}
+/* Color del dropdown cuando está activo */
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #2b5c7a;
+    background-color: #f7f3ef;
+}
+/*#endregion */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Customización de los elementos de los menús en los gridviews */
+.gridview_menu > li > a {
+    color: #f7f3ef;
+}
+
+    .gridview_menu > li > a:hover,
+    .gridview_menu > li > a:focus {
+        color: #f7f3ef;
+    }
+
+.gridview_menu > .active > a,
+.gridview_menu > .active > a:hover,
+.gridview_menu > .active > a:focus {
+    color: #333333;
+    background-color: #f7f3ef;
+}
+
+.gridview_menu > .open > a,
+.gridview_menu > .open > a:hover,
+.gridview_menu > .open > a:focus {
+    color: #333333;
+    background-color: #f7f3ef;
+}
+/* Color del dropdown durante eventos */
+.gridview_menu .open .dropdown-menu > li > a:hover,
+.gridview_menu .open .dropdown-menu > li > a:focus {
+    color: #f7f3ef;
+    background-color: #2b5c7a;
+}
+/* Color del dropdown cuando está activo */
+.gridview_menu .open .dropdown-menu > .active > a,
+.gridview_menu .open .dropdown-menu > .active > a:hover,
+.gridview_menu .open .dropdown-menu > .active > a:focus {
+    color: #2b5c7a;
+    background-color: #f7f3ef;
+}
+/*#endregion Customización de los elementos de los menús en los gridviews */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*#region Customización de autocomplete */
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+  padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+  background-color: #DDD;
+}
+.ui-helper-hidden-accessible { 
+    position: absolute !important; 
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px,1px,1px,1px);
+}
+
+/*#region Customización de autocomplete */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
