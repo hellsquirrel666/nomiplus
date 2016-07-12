@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A06759_NOMINASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DB_A06759_NOMINASModelStoreContainer">
+          <EntitySet Name="CausaBaja" EntityType="DB_A06759_NOMINASModel.Store.CausaBaja" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ciudad" EntityType="DB_A06759_NOMINASModel.Store.Ciudad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Colonia" EntityType="DB_A06759_NOMINASModel.Store.Colonia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Departamento" EntityType="DB_A06759_NOMINASModel.Store.Departamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Direccion" EntityType="DB_A06759_NOMINASModel.Store.Direccion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empleado" EntityType="DB_A06759_NOMINASModel.Store.Empleado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empresa" EntityType="DB_A06759_NOMINASModel.Store.Empresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estado" EntityType="DB_A06759_NOMINASModel.Store.Estado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Municipio" EntityType="DB_A06759_NOMINASModel.Store.Municipio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ocupaciones" EntityType="DB_A06759_NOMINASModel.Store.Ocupaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pais" EntityType="DB_A06759_NOMINASModel.Store.Pais" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Periodicidad" EntityType="DB_A06759_NOMINASModel.Store.Periodicidad" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rol" EntityType="DB_A06759_NOMINASModel.Store.Rol" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sucursal" EntityType="DB_A06759_NOMINASModel.Store.Sucursal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoSalario" EntityType="DB_A06759_NOMINASModel.Store.TipoSalario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoTrabajador" EntityType="DB_A06759_NOMINASModel.Store.TipoTrabajador" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="DB_A06759_NOMINASModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsuarioEmpresa" EntityType="DB_A06759_NOMINASModel.Store.UsuarioEmpresa" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Ciudad_Estado" Association="DB_A06759_NOMINASModel.Store.FK_Ciudad_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Ciudad" EntitySet="Ciudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colonia_Municipio" Association="DB_A06759_NOMINASModel.Store.FK_Colonia_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Colonia" EntitySet="Colonia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departamento_Sucursal" Association="DB_A06759_NOMINASModel.Store.FK_Departamento_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Departamento" EntitySet="Departamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Colonia" Association="DB_A06759_NOMINASModel.Store.FK_Direccion_Colonia">
+            <End Role="Colonia" EntitySet="Colonia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_CausaBaja" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_CausaBaja">
+            <End Role="CausaBaja" EntitySet="CausaBaja" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Departamento" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Direccion" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Estado" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Ocupaciones" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Ocupaciones">
+            <End Role="Ocupaciones" EntitySet="Ocupaciones" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Periodicidad" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Periodicidad">
+            <End Role="Periodicidad" EntitySet="Periodicidad" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Sucursal" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_TipoSalario" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_TipoSalario">
+            <End Role="TipoSalario" EntitySet="TipoSalario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_TipoTrabajador" Association="DB_A06759_NOMINASModel.Store.FK_Empleado_TipoTrabajador">
+            <End Role="TipoTrabajador" EntitySet="TipoTrabajador" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Direccion" Association="DB_A06759_NOMINASModel.Store.FK_Empresa_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empresa" EntitySet="Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="DB_A06759_NOMINASModel.Store.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_Ciudad" Association="DB_A06759_NOMINASModel.Store.FK_Municipio_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Direccion" Association="DB_A06759_NOMINASModel.Store.FK_Sucursal_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Sucursal" EntitySet="Sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Empresa" Association="DB_A06759_NOMINASModel.Store.FK_Sucursal_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Sucursal" EntitySet="Sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Rol" Association="DB_A06759_NOMINASModel.Store.FK_Usuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresa_Empresa" Association="DB_A06759_NOMINASModel.Store.FK_UsuarioEmpresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresa_Usuario" Association="DB_A06759_NOMINASModel.Store.FK_UsuarioEmpresa_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CausaBaja">
+          <Key>
+            <PropertyRef Name="nIdCausaBaja" />
+          </Key>
+          <Property Name="nIdCausaBaja" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sCausaBaja" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="nIdCiudad" />
+          </Key>
+          <Property Name="nIdCiudad" Type="int" Nullable="false" />
+          <Property Name="sCiudad" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="nIdEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colonia">
+          <Key>
+            <PropertyRef Name="nIdColonia" />
+          </Key>
+          <Property Name="nIdColonia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sColonia" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sCP" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="nIdMunicipio" Type="int" Nullable="false" />
+          <Property Name="nIdCiudad" Type="int" Nullable="false" />
+          <Property Name="nIdEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="nIdDepartamento" />
+          </Key>
+          <Property Name="nIdDepartamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sDepartamento" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sNombreEncargado" Type="nvarchar" MaxLength="100" />
+          <Property Name="nIdSucursal" Type="int" Nullable="false" />
+          <Property Name="sTelefono" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="sEmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="nIdDireccion" />
+          </Key>
+          <Property Name="nIdDireccion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sCalle" Type="nvarchar" MaxLength="200" />
+          <Property Name="sNoInterno" Type="nvarchar" MaxLength="50" />
+          <Property Name="sNoExterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nIdColonia" Type="int" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="nIdEmpleado" />
+          </Key>
+          <Property Name="nIdEmpleado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sNombre" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sPrimerApellido" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sSegundoApellido" Type="nvarchar" MaxLength="200" />
+          <Property Name="nIdDepartamento" Type="int" Nullable="false" />
+          <Property Name="nIdPeriodicidad" Type="int" Nullable="false" />
+          <Property Name="sRFC" Type="nvarchar" MaxLength="50" />
+          <Property Name="sCURP" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nNSS" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="nNoInfonavit" Type="nvarchar" MaxLength="50" />
+          <Property Name="sFecharegistro" Type="date" Nullable="false" />
+          <Property Name="sSexo" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="nIdTipoTrabajador" Type="int" Nullable="false" />
+          <Property Name="nIdTipoSalario" Type="int" Nullable="false" />
+          <Property Name="nIdEstadoNacimiento" Type="int" Nullable="false" />
+          <Property Name="sUMF" Type="nvarchar(max)" />
+          <Property Name="dFechaAltaIMSS" Type="date" />
+          <Property Name="nIdDireccion" Type="int" Nullable="false" />
+          <Property Name="nSalarioDiario" Type="decimal" Nullable="false" Scale="5" />
+          <Property Name="nSDI" Type="decimal" Nullable="false" Scale="5" />
+          <Property Name="dFechaBaja" Type="date" />
+          <Property Name="nIdCausaBaja" Type="int" Nullable="false" />
+          <Property Name="dFechaReingreso" Type="date" />
+          <Property Name="nIdOcupacion" Type="int" Nullable="false" />
+          <Property Name="nIdSucursal" Type="int" Nullable="false" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="nIdEmpresa" />
+          </Key>
+          <Property Name="nIdEmpresa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sRazonSocial" Type="nvarchar" MaxLength="200" />
+          <Property Name="sRFC" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sCURP" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sRegimenFiscal" Type="nvarchar" MaxLength="200" />
+          <Property Name="nIdDireccion" Type="int" Nullable="false" />
+          <Property Name="sRepresentanteLegal" Type="nvarchar" MaxLength="200" />
+          <Property Name="sEmailContacto" Type="nvarchar" MaxLength="50" />
+          <Property Name="sTelefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="sFAx" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sPaginaWeb" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sFechaRegistro" Type="date" />
+          <Property Name="sLogo" Type="nvarchar" MaxLength="200" />
+          <Property Name="bActivo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="nIdEstado" />
+          </Key>
+          <Property Name="nIdEstado" Type="int" Nullable="false" />
+          <Property Name="sCiudad" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="nIdPais" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="nIdMunicipio" />
+          </Key>
+          <Property Name="nIdMunicipio" Type="int" Nullable="false" />
+          <Property Name="sMunicpio" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="nIdCiudad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ocupaciones">
+          <Key>
+            <PropertyRef Name="nIdOcupacion" />
+          </Key>
+          <Property Name="nIdOcupacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sOcupacion" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="nIdPais" />
+          </Key>
+          <Property Name="nIdPais" Type="int" Nullable="false" />
+          <Property Name="sPais" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Periodicidad">
+          <Key>
+            <PropertyRef Name="nIdPeriodicidad" />
+          </Key>
+          <Property Name="nIdPeriodicidad" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sPeriodicidad" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="nIdRol" />
+          </Key>
+          <Property Name="nIdRol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sDescripcion" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sucursal">
+          <Key>
+            <PropertyRef Name="nIdSucursal" />
+          </Key>
+          <Property Name="nIdSucursal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sNombreSucursal" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="nIdDireccion" Type="int" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="int" Nullable="false" />
+          <Property Name="sFechaRegistro" Type="date" Nullable="false" />
+          <Property Name="sTelefono" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="sEmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="sNombreEncargado" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bActivo" Type="bit" />
+        </EntityType>
+        <EntityType Name="TipoSalario">
+          <Key>
+            <PropertyRef Name="nIdTipoSalario" />
+          </Key>
+          <Property Name="nIdTipoSalario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sTipoSalario" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoTrabajador">
+          <Key>
+            <PropertyRef Name="nIdTipoTrabajador" />
+          </Key>
+          <Property Name="nIdTipoTrabajador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sTipoTrabajador" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="nIdUsuario" />
+          </Key>
+          <Property Name="nIdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="sNombre" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sPrimerApellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="sSegundoApellido" Type="nvarchar" MaxLength="100" />
+          <Property Name="nIdRol" Type="int" Nullable="false" />
+          <Property Name="sUsuario" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="sContraseña" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UsuarioEmpresa">
+          <Key>
+            <PropertyRef Name="nIdUsuarioEmpresa" />
+          </Key>
+          <Property Name="nIdUsuarioEmpresa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nIdUsuario" Type="int" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="int" Nullable="false" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ciudad_Estado">
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Store.Estado" Multiplicity="1" />
+          <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Store.Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="nIdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colonia_Municipio">
+          <End Role="Municipio" Type="DB_A06759_NOMINASModel.Store.Municipio" Multiplicity="1" />
+          <End Role="Colonia" Type="DB_A06759_NOMINASModel.Store.Colonia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="nIdMunicipio" />
+            </Principal>
+            <Dependent Role="Colonia">
+              <PropertyRef Name="nIdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departamento_Sucursal">
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Store.Sucursal" Multiplicity="1" />
+          <End Role="Departamento" Type="DB_A06759_NOMINASModel.Store.Departamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="nIdSucursal" />
+            </Principal>
+            <Dependent Role="Departamento">
+              <PropertyRef Name="nIdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Colonia">
+          <End Role="Colonia" Type="DB_A06759_NOMINASModel.Store.Colonia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Store.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonia">
+              <PropertyRef Name="nIdColonia" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="nIdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_CausaBaja">
+          <End Role="CausaBaja" Type="DB_A06759_NOMINASModel.Store.CausaBaja" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CausaBaja">
+              <PropertyRef Name="nIdCausaBaja" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdCausaBaja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Departamento">
+          <End Role="Departamento" Type="DB_A06759_NOMINASModel.Store.Departamento" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="nIdDepartamento" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Store.Direccion" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Estado">
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Store.Estado" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdEstadoNacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Ocupaciones">
+          <End Role="Ocupaciones" Type="DB_A06759_NOMINASModel.Store.Ocupaciones" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ocupaciones">
+              <PropertyRef Name="nIdOcupacion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdOcupacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Periodicidad">
+          <End Role="Periodicidad" Type="DB_A06759_NOMINASModel.Store.Periodicidad" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodicidad">
+              <PropertyRef Name="nIdPeriodicidad" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdPeriodicidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Sucursal">
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Store.Sucursal" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="nIdSucursal" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_TipoSalario">
+          <End Role="TipoSalario" Type="DB_A06759_NOMINASModel.Store.TipoSalario" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSalario">
+              <PropertyRef Name="nIdTipoSalario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdTipoSalario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_TipoTrabajador">
+          <End Role="TipoTrabajador" Type="DB_A06759_NOMINASModel.Store.TipoTrabajador" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Store.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTrabajador">
+              <PropertyRef Name="nIdTipoTrabajador" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdTipoTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Store.Direccion" Multiplicity="1" />
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Store.Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="DB_A06759_NOMINASModel.Store.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Store.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="nIdPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="nIdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_Ciudad">
+          <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Store.Ciudad" Multiplicity="1" />
+          <End Role="Municipio" Type="DB_A06759_NOMINASModel.Store.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="nIdCiudad" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="nIdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sucursal_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Store.Direccion" Multiplicity="1" />
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Store.Sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Sucursal">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sucursal_Empresa">
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Store.Empresa" Multiplicity="1" />
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Store.Sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Principal>
+            <Dependent Role="Sucursal">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Rol">
+          <End Role="Rol" Type="DB_A06759_NOMINASModel.Store.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="DB_A06759_NOMINASModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="nIdRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="nIdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresa_Empresa">
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Store.Empresa" Multiplicity="1" />
+          <End Role="UsuarioEmpresa" Type="DB_A06759_NOMINASModel.Store.UsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresa_Usuario">
+          <End Role="Usuario" Type="DB_A06759_NOMINASModel.Store.Usuario" Multiplicity="1" />
+          <End Role="UsuarioEmpresa" Type="DB_A06759_NOMINASModel.Store.UsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="nIdUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="nIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A06759_NOMINASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_A06759_NOMINASEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CausaBaja" EntityType="DB_A06759_NOMINASModel.CausaBaja" />
+          <EntitySet Name="Ciudad" EntityType="DB_A06759_NOMINASModel.Ciudad" />
+          <EntitySet Name="Colonia" EntityType="DB_A06759_NOMINASModel.Colonia" />
+          <EntitySet Name="Departamento" EntityType="DB_A06759_NOMINASModel.Departamento" />
+          <EntitySet Name="Direccion" EntityType="DB_A06759_NOMINASModel.Direccion" />
+          <EntitySet Name="Empleado" EntityType="DB_A06759_NOMINASModel.Empleado" />
+          <EntitySet Name="Empresa" EntityType="DB_A06759_NOMINASModel.Empresa" />
+          <EntitySet Name="Estado" EntityType="DB_A06759_NOMINASModel.Estado" />
+          <EntitySet Name="Municipio" EntityType="DB_A06759_NOMINASModel.Municipio" />
+          <EntitySet Name="Ocupaciones" EntityType="DB_A06759_NOMINASModel.Ocupaciones" />
+          <EntitySet Name="Pais" EntityType="DB_A06759_NOMINASModel.Pais" />
+          <EntitySet Name="Periodicidad" EntityType="DB_A06759_NOMINASModel.Periodicidad" />
+          <EntitySet Name="Rol" EntityType="DB_A06759_NOMINASModel.Rol" />
+          <EntitySet Name="Sucursal" EntityType="DB_A06759_NOMINASModel.Sucursal" />
+          <EntitySet Name="TipoSalario" EntityType="DB_A06759_NOMINASModel.TipoSalario" />
+          <EntitySet Name="TipoTrabajador" EntityType="DB_A06759_NOMINASModel.TipoTrabajador" />
+          <EntitySet Name="Usuario" EntityType="DB_A06759_NOMINASModel.Usuario" />
+          <EntitySet Name="UsuarioEmpresa" EntityType="DB_A06759_NOMINASModel.UsuarioEmpresa" />
+          <AssociationSet Name="FK_Empleado_CausaBaja" Association="DB_A06759_NOMINASModel.FK_Empleado_CausaBaja">
+            <End Role="CausaBaja" EntitySet="CausaBaja" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciudad_Estado" Association="DB_A06759_NOMINASModel.FK_Ciudad_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Ciudad" EntitySet="Ciudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_Ciudad" Association="DB_A06759_NOMINASModel.FK_Municipio_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colonia_Municipio" Association="DB_A06759_NOMINASModel.FK_Colonia_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Colonia" EntitySet="Colonia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Direccion_Colonia" Association="DB_A06759_NOMINASModel.FK_Direccion_Colonia">
+            <End Role="Colonia" EntitySet="Colonia" />
+            <End Role="Direccion" EntitySet="Direccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departamento_Sucursal" Association="DB_A06759_NOMINASModel.FK_Departamento_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Departamento" EntitySet="Departamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Departamento" Association="DB_A06759_NOMINASModel.FK_Empleado_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Direccion" Association="DB_A06759_NOMINASModel.FK_Empleado_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empresa_Direccion" Association="DB_A06759_NOMINASModel.FK_Empresa_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Empresa" EntitySet="Empresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Direccion" Association="DB_A06759_NOMINASModel.FK_Sucursal_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Sucursal" EntitySet="Sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Estado" Association="DB_A06759_NOMINASModel.FK_Empleado_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Ocupaciones" Association="DB_A06759_NOMINASModel.FK_Empleado_Ocupaciones">
+            <End Role="Ocupaciones" EntitySet="Ocupaciones" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Periodicidad" Association="DB_A06759_NOMINASModel.FK_Empleado_Periodicidad">
+            <End Role="Periodicidad" EntitySet="Periodicidad" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Sucursal" Association="DB_A06759_NOMINASModel.FK_Empleado_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_TipoSalario" Association="DB_A06759_NOMINASModel.FK_Empleado_TipoSalario">
+            <End Role="TipoSalario" EntitySet="TipoSalario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_TipoTrabajador" Association="DB_A06759_NOMINASModel.FK_Empleado_TipoTrabajador">
+            <End Role="TipoTrabajador" EntitySet="TipoTrabajador" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Empresa" Association="DB_A06759_NOMINASModel.FK_Sucursal_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="Sucursal" EntitySet="Sucursal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresa_Empresa" Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Empresa">
+            <End Role="Empresa" EntitySet="Empresa" />
+            <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="DB_A06759_NOMINASModel.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Rol" Association="DB_A06759_NOMINASModel.FK_Usuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresa_Usuario" Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CausaBaja">
+          <Key>
+            <PropertyRef Name="nIdCausaBaja" />
+          </Key>
+          <Property Name="nIdCausaBaja" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sCausaBaja" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="nIdCiudad" />
+          </Key>
+          <Property Name="nIdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="sCiudad" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="nIdEstado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colonia">
+          <Key>
+            <PropertyRef Name="nIdColonia" />
+          </Key>
+          <Property Name="nIdColonia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sColonia" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sCP" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="nIdMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="nIdCiudad" Type="Int32" Nullable="false" />
+          <Property Name="nIdEstado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="nIdDepartamento" />
+          </Key>
+          <Property Name="nIdDepartamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sDepartamento" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sNombreEncargado" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="nIdSucursal" Type="Int32" Nullable="false" />
+          <Property Name="sTelefono" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sFax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sEmail" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="nIdDireccion" />
+          </Key>
+          <Property Name="nIdDireccion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sCalle" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sNoInterno" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sNoExterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nIdColonia" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="nIdEmpleado" />
+          </Key>
+          <Property Name="nIdEmpleado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sNombre" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sPrimerApellido" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sSegundoApellido" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="nIdDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="nIdPeriodicidad" Type="Int32" Nullable="false" />
+          <Property Name="sRFC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sCURP" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nNSS" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="nNoInfonavit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sFecharegistro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="sSexo" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="nIdTipoTrabajador" Type="Int32" Nullable="false" />
+          <Property Name="nIdTipoSalario" Type="Int32" Nullable="false" />
+          <Property Name="nIdEstadoNacimiento" Type="Int32" Nullable="false" />
+          <Property Name="sUMF" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dFechaAltaIMSS" Type="DateTime" Precision="0" />
+          <Property Name="nIdDireccion" Type="Int32" Nullable="false" />
+          <Property Name="nSalarioDiario" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+          <Property Name="nSDI" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+          <Property Name="dFechaBaja" Type="DateTime" Precision="0" />
+          <Property Name="nIdCausaBaja" Type="Int32" Nullable="false" />
+          <Property Name="dFechaReingreso" Type="DateTime" Precision="0" />
+          <Property Name="nIdOcupacion" Type="Int32" Nullable="false" />
+          <Property Name="nIdSucursal" Type="Int32" Nullable="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="nIdEmpresa" />
+          </Key>
+          <Property Name="nIdEmpresa" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sRazonSocial" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sRFC" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sCURP" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sRegimenFiscal" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="nIdDireccion" Type="Int32" Nullable="false" />
+          <Property Name="sRepresentanteLegal" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sEmailContacto" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sTelefono" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sFAx" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sPaginaWeb" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sFechaRegistro" Type="DateTime" Precision="0" />
+          <Property Name="sLogo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="nIdEstado" />
+          </Key>
+          <Property Name="nIdEstado" Type="Int32" Nullable="false" />
+          <Property Name="sCiudad" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="nIdPais" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="nIdMunicipio" />
+          </Key>
+          <Property Name="nIdMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="sMunicpio" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="nIdCiudad" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ocupaciones">
+          <Key>
+            <PropertyRef Name="nIdOcupacion" />
+          </Key>
+          <Property Name="nIdOcupacion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sOcupacion" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="nIdPais" />
+          </Key>
+          <Property Name="nIdPais" Type="Int32" Nullable="false" />
+          <Property Name="sPais" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Periodicidad">
+          <Key>
+            <PropertyRef Name="nIdPeriodicidad" />
+          </Key>
+          <Property Name="nIdPeriodicidad" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sPeriodicidad" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="nIdRol" />
+          </Key>
+          <Property Name="nIdRol" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sDescripcion" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sucursal">
+          <Key>
+            <PropertyRef Name="nIdSucursal" />
+          </Key>
+          <Property Name="nIdSucursal" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sNombreSucursal" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="nIdDireccion" Type="Int32" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="sFechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="sTelefono" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sFax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sEmail" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sNombreEncargado" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TipoSalario">
+          <Key>
+            <PropertyRef Name="nIdTipoSalario" />
+          </Key>
+          <Property Name="nIdTipoSalario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sTipoSalario" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoTrabajador">
+          <Key>
+            <PropertyRef Name="nIdTipoTrabajador" />
+          </Key>
+          <Property Name="nIdTipoTrabajador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sTipoTrabajador" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="nIdUsuario" />
+          </Key>
+          <Property Name="nIdUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="sNombre" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="sPrimerApellido" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="sSegundoApellido" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="nIdRol" Type="Int32" Nullable="false" />
+          <Property Name="sUsuario" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sContraseña" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="UsuarioEmpresa">
+          <Key>
+            <PropertyRef Name="nIdUsuarioEmpresa" />
+          </Key>
+          <Property Name="nIdUsuarioEmpresa" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nIdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="nIdEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Empleado_CausaBaja">
+          <End Role="CausaBaja" Type="DB_A06759_NOMINASModel.CausaBaja" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CausaBaja">
+              <PropertyRef Name="nIdCausaBaja" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdCausaBaja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciudad_Estado">
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="1" />
+          <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="nIdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_Ciudad">
+          <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Ciudad" Multiplicity="1" />
+          <End Role="Municipio" Type="DB_A06759_NOMINASModel.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="nIdCiudad" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="nIdCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colonia_Municipio">
+          <End Role="Municipio" Type="DB_A06759_NOMINASModel.Municipio" Multiplicity="1" />
+          <End Role="Colonia" Type="DB_A06759_NOMINASModel.Colonia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="nIdMunicipio" />
+            </Principal>
+            <Dependent Role="Colonia">
+              <PropertyRef Name="nIdMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Direccion_Colonia">
+          <End Role="Colonia" Type="DB_A06759_NOMINASModel.Colonia" Multiplicity="0..1" />
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Direccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colonia">
+              <PropertyRef Name="nIdColonia" />
+            </Principal>
+            <Dependent Role="Direccion">
+              <PropertyRef Name="nIdColonia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departamento_Sucursal">
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Sucursal" Multiplicity="1" />
+          <End Role="Departamento" Type="DB_A06759_NOMINASModel.Departamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="nIdSucursal" />
+            </Principal>
+            <Dependent Role="Departamento">
+              <PropertyRef Name="nIdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Departamento">
+          <End Role="Departamento" Type="DB_A06759_NOMINASModel.Departamento" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="nIdDepartamento" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Direccion" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empresa_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Direccion" Multiplicity="1" />
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Empresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Empresa">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sucursal_Direccion">
+          <End Role="Direccion" Type="DB_A06759_NOMINASModel.Direccion" Multiplicity="1" />
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="nIdDireccion" />
+            </Principal>
+            <Dependent Role="Sucursal">
+              <PropertyRef Name="nIdDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Estado">
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdEstadoNacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Ocupaciones">
+          <End Role="Ocupaciones" Type="DB_A06759_NOMINASModel.Ocupaciones" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ocupaciones">
+              <PropertyRef Name="nIdOcupacion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdOcupacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Periodicidad">
+          <End Role="Periodicidad" Type="DB_A06759_NOMINASModel.Periodicidad" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Periodicidad">
+              <PropertyRef Name="nIdPeriodicidad" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdPeriodicidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Sucursal">
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Sucursal" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="nIdSucursal" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_TipoSalario">
+          <End Role="TipoSalario" Type="DB_A06759_NOMINASModel.TipoSalario" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSalario">
+              <PropertyRef Name="nIdTipoSalario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdTipoSalario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_TipoTrabajador">
+          <End Role="TipoTrabajador" Type="DB_A06759_NOMINASModel.TipoTrabajador" Multiplicity="1" />
+          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTrabajador">
+              <PropertyRef Name="nIdTipoTrabajador" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdTipoTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sucursal_Empresa">
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Empresa" Multiplicity="1" />
+          <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Sucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Principal>
+            <Dependent Role="Sucursal">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresa_Empresa">
+          <End Role="Empresa" Type="DB_A06759_NOMINASModel.Empresa" Multiplicity="1" />
+          <End Role="UsuarioEmpresa" Type="DB_A06759_NOMINASModel.UsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Role="Pais" Type="DB_A06759_NOMINASModel.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="nIdPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="nIdPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Rol">
+          <End Role="Rol" Type="DB_A06759_NOMINASModel.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="DB_A06759_NOMINASModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="nIdRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="nIdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresa_Usuario">
+          <End Role="Usuario" Type="DB_A06759_NOMINASModel.Usuario" Multiplicity="1" />
+          <End Role="UsuarioEmpresa" Type="DB_A06759_NOMINASModel.UsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="nIdUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="nIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A06759_NOMINASModelStoreContainer" CdmEntityContainer="DB_A06759_NOMINASEntities">
+          <EntitySetMapping Name="CausaBaja">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.CausaBaja">
+              <MappingFragment StoreEntitySet="CausaBaja">
+                <ScalarProperty Name="nIdCausaBaja" ColumnName="nIdCausaBaja" />
+                <ScalarProperty Name="sCausaBaja" ColumnName="sCausaBaja" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudad">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="nIdCiudad" ColumnName="nIdCiudad" />
+                <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
+                <ScalarProperty Name="nIdEstado" ColumnName="nIdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colonia">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Colonia">
+              <MappingFragment StoreEntitySet="Colonia">
+                <ScalarProperty Name="nIdColonia" ColumnName="nIdColonia" />
+                <ScalarProperty Name="sColonia" ColumnName="sColonia" />
+                <ScalarProperty Name="sCP" ColumnName="sCP" />
+                <ScalarProperty Name="nIdMunicipio" ColumnName="nIdMunicipio" />
+                <ScalarProperty Name="nIdCiudad" ColumnName="nIdCiudad" />
+                <ScalarProperty Name="nIdEstado" ColumnName="nIdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="nIdDepartamento" ColumnName="nIdDepartamento" />
+                <ScalarProperty Name="sDepartamento" ColumnName="sDepartamento" />
+                <ScalarProperty Name="sNombreEncargado" ColumnName="sNombreEncargado" />
+                <ScalarProperty Name="nIdSucursal" ColumnName="nIdSucursal" />
+                <ScalarProperty Name="sTelefono" ColumnName="sTelefono" />
+                <ScalarProperty Name="sFax" ColumnName="sFax" />
+                <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="nIdDireccion" ColumnName="nIdDireccion" />
+                <ScalarProperty Name="sCalle" ColumnName="sCalle" />
+                <ScalarProperty Name="sNoInterno" ColumnName="sNoInterno" />
+                <ScalarProperty Name="sNoExterno" ColumnName="sNoExterno" />
+                <ScalarProperty Name="nIdColonia" ColumnName="nIdColonia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="nIdEmpleado" ColumnName="nIdEmpleado" />
+                <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+                <ScalarProperty Name="sPrimerApellido" ColumnName="sPrimerApellido" />
+                <ScalarProperty Name="sSegundoApellido" ColumnName="sSegundoApellido" />
+                <ScalarProperty Name="nIdDepartamento" ColumnName="nIdDepartamento" />
+                <ScalarProperty Name="nIdPeriodicidad" ColumnName="nIdPeriodicidad" />
+                <ScalarProperty Name="sRFC" ColumnName="sRFC" />
+                <ScalarProperty Name="sCURP" ColumnName="sCURP" />
+                <ScalarProperty Name="nNSS" ColumnName="nNSS" />
+                <ScalarProperty Name="nNoInfonavit" ColumnName="nNoInfonavit" />
+                <ScalarProperty Name="sFecharegistro" ColumnName="sFecharegistro" />
+                <ScalarProperty Name="sSexo" ColumnName="sSexo" />
+                <ScalarProperty Name="nIdTipoTrabajador" ColumnName="nIdTipoTrabajador" />
+                <ScalarProperty Name="nIdTipoSalario" ColumnName="nIdTipoSalario" />
+                <ScalarProperty Name="nIdEstadoNacimiento" ColumnName="nIdEstadoNacimiento" />
+                <ScalarProperty Name="sUMF" ColumnName="sUMF" />
+                <ScalarProperty Name="dFechaAltaIMSS" ColumnName="dFechaAltaIMSS" />
+                <ScalarProperty Name="nIdDireccion" ColumnName="nIdDireccion" />
+                <ScalarProperty Name="nSalarioDiario" ColumnName="nSalarioDiario" />
+                <ScalarProperty Name="nSDI" ColumnName="nSDI" />
+                <ScalarProperty Name="dFechaBaja" ColumnName="dFechaBaja" />
+                <ScalarProperty Name="nIdCausaBaja" ColumnName="nIdCausaBaja" />
+                <ScalarProperty Name="dFechaReingreso" ColumnName="dFechaReingreso" />
+                <ScalarProperty Name="nIdOcupacion" ColumnName="nIdOcupacion" />
+                <ScalarProperty Name="nIdSucursal" ColumnName="nIdSucursal" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresa">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Empresa">
+              <MappingFragment StoreEntitySet="Empresa">
+                <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
+                <ScalarProperty Name="sRazonSocial" ColumnName="sRazonSocial" />
+                <ScalarProperty Name="sRFC" ColumnName="sRFC" />
+                <ScalarProperty Name="sCURP" ColumnName="sCURP" />
+                <ScalarProperty Name="sRegimenFiscal" ColumnName="sRegimenFiscal" />
+                <ScalarProperty Name="nIdDireccion" ColumnName="nIdDireccion" />
+                <ScalarProperty Name="sRepresentanteLegal" ColumnName="sRepresentanteLegal" />
+                <ScalarProperty Name="sEmailContacto" ColumnName="sEmailContacto" />
+                <ScalarProperty Name="sTelefono" ColumnName="sTelefono" />
+                <ScalarProperty Name="sFAx" ColumnName="sFAx" />
+                <ScalarProperty Name="sPaginaWeb" ColumnName="sPaginaWeb" />
+                <ScalarProperty Name="sFechaRegistro" ColumnName="sFechaRegistro" />
+                <ScalarProperty Name="sLogo" ColumnName="sLogo" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estado">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="nIdEstado" ColumnName="nIdEstado" />
+                <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
+                <ScalarProperty Name="nIdPais" ColumnName="nIdPais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipio">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="nIdMunicipio" ColumnName="nIdMunicipio" />
+                <ScalarProperty Name="sMunicpio" ColumnName="sMunicpio" />
+                <ScalarProperty Name="nIdCiudad" ColumnName="nIdCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ocupaciones">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Ocupaciones">
+              <MappingFragment StoreEntitySet="Ocupaciones">
+                <ScalarProperty Name="nIdOcupacion" ColumnName="nIdOcupacion" />
+                <ScalarProperty Name="sOcupacion" ColumnName="sOcupacion" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Pais">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="nIdPais" ColumnName="nIdPais" />
+                <ScalarProperty Name="sPais" ColumnName="sPais" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Periodicidad">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Periodicidad">
+              <MappingFragment StoreEntitySet="Periodicidad">
+                <ScalarProperty Name="nIdPeriodicidad" ColumnName="nIdPeriodicidad" />
+                <ScalarProperty Name="sPeriodicidad" ColumnName="sPeriodicidad" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="nIdRol" ColumnName="nIdRol" />
+                <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sucursal">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Sucursal">
+              <MappingFragment StoreEntitySet="Sucursal">
+                <ScalarProperty Name="nIdSucursal" ColumnName="nIdSucursal" />
+                <ScalarProperty Name="sNombreSucursal" ColumnName="sNombreSucursal" />
+                <ScalarProperty Name="nIdDireccion" ColumnName="nIdDireccion" />
+                <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
+                <ScalarProperty Name="sFechaRegistro" ColumnName="sFechaRegistro" />
+                <ScalarProperty Name="sTelefono" ColumnName="sTelefono" />
+                <ScalarProperty Name="sFax" ColumnName="sFax" />
+                <ScalarProperty Name="sEmail" ColumnName="sEmail" />
+                <ScalarProperty Name="sNombreEncargado" ColumnName="sNombreEncargado" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoSalario">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.TipoSalario">
+              <MappingFragment StoreEntitySet="TipoSalario">
+                <ScalarProperty Name="nIdTipoSalario" ColumnName="nIdTipoSalario" />
+                <ScalarProperty Name="sTipoSalario" ColumnName="sTipoSalario" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTrabajador">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.TipoTrabajador">
+              <MappingFragment StoreEntitySet="TipoTrabajador">
+                <ScalarProperty Name="nIdTipoTrabajador" ColumnName="nIdTipoTrabajador" />
+                <ScalarProperty Name="sTipoTrabajador" ColumnName="sTipoTrabajador" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
+                <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+                <ScalarProperty Name="sPrimerApellido" ColumnName="sPrimerApellido" />
+                <ScalarProperty Name="sSegundoApellido" ColumnName="sSegundoApellido" />
+                <ScalarProperty Name="nIdRol" ColumnName="nIdRol" />
+                <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
+                <ScalarProperty Name="sContraseña" ColumnName="sContraseña" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+                <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioEmpresa">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.UsuarioEmpresa">
+              <MappingFragment StoreEntitySet="UsuarioEmpresa">
+                <ScalarProperty Name="nIdUsuarioEmpresa" ColumnName="nIdUsuarioEmpresa" />
+                <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
+                <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
