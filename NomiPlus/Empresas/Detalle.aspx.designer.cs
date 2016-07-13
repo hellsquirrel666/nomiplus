@@ -31,6 +31,15 @@ namespace NomiPlus.Empresas {
         protected global::System.Web.UI.WebControls.HiddenField hdIdEmpresa;
         
         /// <summary>
+        /// hfIdDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdDireccion;
+        
+        /// <summary>
         /// txtRazonSocial control.
         /// </summary>
         /// <remarks>
@@ -211,13 +220,13 @@ namespace NomiPlus.Empresas {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revCodigoPostal;
         
         /// <summary>
-        /// txtColonia control.
+        /// ddlColonia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtColonia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlColonia;
         
         /// <summary>
         /// rfvColonia control.
@@ -229,22 +238,13 @@ namespace NomiPlus.Empresas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvColonia;
         
         /// <summary>
-        /// revColonia control.
+        /// ddlCiudad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revColonia;
-        
-        /// <summary>
-        /// txtCiudad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCiudad;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCiudad;
         
         /// <summary>
         /// rfvCiudad control.
@@ -256,22 +256,13 @@ namespace NomiPlus.Empresas {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCiudad;
         
         /// <summary>
-        /// revCiudad control.
+        /// ddlEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCiudad;
-        
-        /// <summary>
-        /// txtEstado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEstado;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
         
         /// <summary>
         /// rfvEstado control.
@@ -281,15 +272,6 @@ namespace NomiPlus.Empresas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstado;
-        
-        /// <summary>
-        /// revEstado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEstado;
         
         /// <summary>
         /// txtRepresentante control.

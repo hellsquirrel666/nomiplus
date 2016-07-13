@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="NomiPlus.Empresa.Detalle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="NomiPlus.Empresas.Detalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <div class="jumbotron jumbotron-small">
@@ -12,7 +12,8 @@
     <table style="width:100%">
         <tr>
             <td>
-                <asp:HiddenField runat="server" ID="hdIdEmpleado" Visible="true" />
+                <asp:HiddenField runat="server" ID="hfIdDireccion" Visible="true" />
+                <asp:HiddenField runat="server" ID="hfIdEmpleado" Visible="true" />
             </td>
             <td />
         </tr>
@@ -146,8 +147,8 @@
             <td>SDI
             </td>
             <td>
-                <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" width="200px" />
-                <asp:RequiredFieldValidator runat="server" ID="rfvSDI" ControlToValidate="txtSalarioDiario" ErrorMessage="*" ForeColor="Red" Display="Dynamic" 
+                <asp:TextBox runat="server" ID="txtSDI" CssClass="form-control" width="200px" />
+                <asp:RequiredFieldValidator runat="server" ID="rfvSDI" ControlToValidate="txtSDI" ErrorMessage="*" ForeColor="Red" Display="Dynamic" 
                     ValidationGroup="RDIE"/>
             </td>
         </tr>

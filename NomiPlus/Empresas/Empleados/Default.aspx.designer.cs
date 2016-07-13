@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NomiPlus.Empresa
+namespace NomiPlus.Empresas.Empleados
 {
 
 

@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Direccion" Width="1.5" PointX="12" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Empleado" Width="1.5" PointX="21.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Empresa" Width="1.5" PointX="14.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Estado" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Municipio" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Ocupaciones" Width="1.5" PointX="19.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Pais" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
@@ -24,7 +23,6 @@
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Usuario" Width="1.5" PointX="17.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_A06759_NOMINASModel.UsuarioEmpresa" Width="1.5" PointX="19.5" PointY="9.125" IsExpanded="true" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_CausaBaja" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Ciudad_Estado" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Municipio_Ciudad" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Colonia_Municipio" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Direccion_Colonia" ManuallyRouted="false" />
@@ -33,7 +31,6 @@
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Direccion" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empresa_Direccion" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Sucursal_Direccion" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Estado" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Ocupaciones" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Periodicidad" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Sucursal" ManuallyRouted="false" />
@@ -41,9 +38,12 @@
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_TipoTrabajador" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Sucursal_Empresa" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Empresa" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Estado_Pais" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Usuario_Rol" ManuallyRouted="false" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Estado" Width="1.5" PointX="3" PointY="9.25" />
+        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Ciudad_Estado" />
+        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Empleado_Estado" />
+        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Estado_Pais" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

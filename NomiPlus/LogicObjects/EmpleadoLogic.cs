@@ -1,29 +1,29 @@
-﻿using System;
+﻿using NomiPlus.Modelo;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using NomiPlus.Modelo;
 using System.Data.Entity;
+using System.Linq;
 using System.ServiceModel;
+using System.Web;
 
 namespace NomiPlus.LogicObjects
 {
-    public class EmpresaLogic 
+    public class EmpleadoLogic
     {
-        public Empresa GuardarEmpresa(Empresa empresa)
+        public Empleado GuardarEmpleado(Empleado empleado)
         {
             try
             {
-                if (empresa == null)
+                if (empleado == null)
                 {
-                    throw new ArgumentException("No se puede guardar un valor nulo en Empresa.", "Empresa");
+                    throw new ArgumentException("No se puede guardar un valor nulo en Empleado.", "Empleado");
                 }
                 using (var db = new DB_A06759_NOMINASEntities())
                 {
-                    db.Entry(empresa).State = empresa.nIdEmpresa == 0 ? EntityState.Added : EntityState.Modified;
+                    db.Entry(empleado).State = empleado.nIdEmpleado == 0 ? EntityState.Added : EntityState.Modified;
                     db.SaveChanges();
                 }
-                return empresa;
+                return empleado;
             }
             catch (Exception e)
             {
@@ -31,13 +31,13 @@ namespace NomiPlus.LogicObjects
             }
         }
 
-        public List<Empresa> ListaEmpresas()
+        public List<Empleado> ListaEmpleados()
         {
             try
             {
                 using (var db = new DB_A06759_NOMINASEntities())
                 {
-                    var query = db.Empresa.AsQueryable();
+                    var query = db.Empleado.AsQueryable();
                     return query.ToList();
                 }
             }
@@ -47,20 +47,20 @@ namespace NomiPlus.LogicObjects
             }
         }
 
-        public Empresa ObtenerEmpresa(int idEmpresa)
+        public Empleado ObtenerEmpleado(int idEmpleado)
         {
             try
             {
-                if (idEmpresa == null || idEmpresa == 0)
+                if (idEmpleado == null || idEmpleado == 0)
                 {
-                    throw new ArgumentException("No se puede obtener el empresa. idEmpresa no puede estar vacío.", "idEmpresa");
+                    throw new ArgumentException("No se puede obtener el empleado. idEmpleado no puede estar vacío.", "idEmpleado");
                 }
                 using (var db = new DB_A06759_NOMINASEntities())
                 {
-                    Empresa pac = db.Empresa.Where(p => p.nIdEmpresa == idEmpresa).SingleOrDefault();
+                    Modelo.Empleado pac = db.Empleado.Where(p => p.nIdEmpleado == idEmpleado).SingleOrDefault();
                     if (pac == null)
                     {
-                        throw new FaultException(string.Format("Empresa {0} no existe.", idEmpresa));
+                        throw new FaultException(string.Format("Empleado {0} no existe.", idEmpleado));
                     }
                     return pac;
                 }

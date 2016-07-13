@@ -9,6 +9,7 @@
     <h1 class="page-header">Datos</h1>
 
     <asp:HiddenField runat="server" ID="hdIdEmpresa" Visible="false" />
+    <asp:HiddenField runat="server" ID="hfIdDireccion" Visible="false" />
     <table class="large-table">
         <tr>
             <td class="formulario-md" style="width: 140px">Razón social
@@ -46,7 +47,7 @@
             <td>Régimen Fiscal
             </td>
             <td>
-                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlRegimenFiscal" Width="200px">
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlRegimenFiscal" Width="210px">
                     <asp:ListItem Value="Régimen General de Ley Personas Morales" Text="Régimen General de Ley Personas Morales" runat="server" />
                     <asp:ListItem Value="Personas Morales con Fines no Lucrativos" Text="Personas Morales con Fines no Lucrativos" runat="server" />
                     <asp:ListItem Value="Régimen de las Personas Físicas con Actividades Empresariales y Profesionales" Text="Régimen de las Personas Físicas con Actividades Empresariales y Profesionales" runat="server" />
@@ -91,7 +92,7 @@
             <td>Código postal
             </td>
             <td>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" OnTextChanged="txtCodigoPostal_TextChanged" />
             </td>
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvCodigoPostal" ControlToValidate="txtCodigoPostal" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
@@ -101,34 +102,28 @@
             <td>Colonia
             </td>
             <td>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtColonia" Width="200px" />
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlColonia" Width="210px"></asp:DropDownList>
             </td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ID="rfvColonia" ControlToValidate="txtColonia" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
-                <asp:RegularExpressionValidator runat="server" ID="revColonia" ControlToValidate="txtColonia" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.\s\-]{1,100}" />
+                <asp:RequiredFieldValidator runat="server" ID="rfvColonia" ControlToValidate="ddlColonia" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
         </tr>
         <tr>
             <td>Ciudad
             </td>
             <td>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtCiudad" Width="200px" />
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCiudad" Width="210px" />
             </td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ID="rfvCiudad" ControlToValidate="txtCiudad" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
-                <asp:RegularExpressionValidator runat="server" ID="revCiudad" ControlToValidate="txtCiudad" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.\s\-]{1,100}" />
+                <asp:RequiredFieldValidator runat="server" ID="rfvCiudad" ControlToValidate="ddlCiudad" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
             <td>Estado
             </td>
             <td>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtEstado" Width="200px" />
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlEstado" Width="210px" />
             </td>
             <td>
-                <asp:RequiredFieldValidator runat="server" ID="rfvEstado" ControlToValidate="txtEstado" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
-                <asp:RegularExpressionValidator runat="server" ID="revEstado" ControlToValidate="txtEstado" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.\s\-]{1,100}" />
+                <asp:RequiredFieldValidator runat="server" ID="rfvEstado" ControlToValidate="ddlEstado" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
             <td>Representante legal
             </td>
@@ -192,12 +187,16 @@
             </td>
         </tr>
     </table>
+    </br>
+    </br>
+    </br>
     <table class="large-table">
         <tr>
             <td class="text-right">
                 <asp:Button runat="server" ID="btnAceptar" OnClick="btnAceptar_Click" Text="Guardar" CssClass="btn btn-primary"
                     OnClientClick="return Validate('¿Estás seguro que deseas guardar datos de la empresa?');" />
-                <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-secondary" CausesValidation="False"
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-danger" CausesValidation="False"
                     OnClientClick="return confirm('¿Estás seguro que deseas volver sin guardar los cambios?');" />
             </td>
         </tr>

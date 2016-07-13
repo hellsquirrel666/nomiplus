@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_A06759_NOMINASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_A06759_NOMINASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="DB_A06759_NOMINASModelStoreContainer">
           <EntitySet Name="CausaBaja" EntityType="DB_A06759_NOMINASModel.Store.CausaBaja" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Ciudad" EntityType="DB_A06759_NOMINASModel.Store.Ciudad" store:Type="Tables" Schema="dbo" />
@@ -214,7 +214,7 @@
             <PropertyRef Name="nIdEstado" />
           </Key>
           <Property Name="nIdEstado" Type="int" Nullable="false" />
-          <Property Name="sCiudad" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="sEstado" Type="nvarchar" Nullable="false" MaxLength="200" />
           <Property Name="nIdPais" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Municipio">
@@ -562,8 +562,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_A06759_NOMINASModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -575,7 +574,6 @@
           <EntitySet Name="Direccion" EntityType="DB_A06759_NOMINASModel.Direccion" />
           <EntitySet Name="Empleado" EntityType="DB_A06759_NOMINASModel.Empleado" />
           <EntitySet Name="Empresa" EntityType="DB_A06759_NOMINASModel.Empresa" />
-          <EntitySet Name="Estado" EntityType="DB_A06759_NOMINASModel.Estado" />
           <EntitySet Name="Municipio" EntityType="DB_A06759_NOMINASModel.Municipio" />
           <EntitySet Name="Ocupaciones" EntityType="DB_A06759_NOMINASModel.Ocupaciones" />
           <EntitySet Name="Pais" EntityType="DB_A06759_NOMINASModel.Pais" />
@@ -589,10 +587,6 @@
           <AssociationSet Name="FK_Empleado_CausaBaja" Association="DB_A06759_NOMINASModel.FK_Empleado_CausaBaja">
             <End Role="CausaBaja" EntitySet="CausaBaja" />
             <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ciudad_Estado" Association="DB_A06759_NOMINASModel.FK_Ciudad_Estado">
-            <End Role="Estado" EntitySet="Estado" />
-            <End Role="Ciudad" EntitySet="Ciudad" />
           </AssociationSet>
           <AssociationSet Name="FK_Municipio_Ciudad" Association="DB_A06759_NOMINASModel.FK_Municipio_Ciudad">
             <End Role="Ciudad" EntitySet="Ciudad" />
@@ -626,10 +620,6 @@
             <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Sucursal" EntitySet="Sucursal" />
           </AssociationSet>
-          <AssociationSet Name="FK_Empleado_Estado" Association="DB_A06759_NOMINASModel.FK_Empleado_Estado">
-            <End Role="Estado" EntitySet="Estado" />
-            <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
           <AssociationSet Name="FK_Empleado_Ocupaciones" Association="DB_A06759_NOMINASModel.FK_Empleado_Ocupaciones">
             <End Role="Ocupaciones" EntitySet="Ocupaciones" />
             <End Role="Empleado" EntitySet="Empleado" />
@@ -658,10 +648,6 @@
             <End Role="Empresa" EntitySet="Empresa" />
             <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
           </AssociationSet>
-          <AssociationSet Name="FK_Estado_Pais" Association="DB_A06759_NOMINASModel.FK_Estado_Pais">
-            <End Role="Pais" EntitySet="Pais" />
-            <End Role="Estado" EntitySet="Estado" />
-          </AssociationSet>
           <AssociationSet Name="FK_Usuario_Rol" Association="DB_A06759_NOMINASModel.FK_Usuario_Rol">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
@@ -669,6 +655,19 @@
           <AssociationSet Name="FK_UsuarioEmpresa_Usuario" Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+          <EntitySet Name="Estado" EntityType="DB_A06759_NOMINASModel.Estado" />
+          <AssociationSet Name="FK_Ciudad_Estado" Association="DB_A06759_NOMINASModel.FK_Ciudad_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Ciudad" EntitySet="Ciudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleado_Estado" Association="DB_A06759_NOMINASModel.FK_Empleado_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estado_Pais" Association="DB_A06759_NOMINASModel.FK_Estado_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CausaBaja">
@@ -770,14 +769,6 @@
           <Property Name="sFechaRegistro" Type="DateTime" Precision="0" />
           <Property Name="sLogo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="bActivo" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Estado">
-          <Key>
-            <PropertyRef Name="nIdEstado" />
-          </Key>
-          <Property Name="nIdEstado" Type="Int32" Nullable="false" />
-          <Property Name="sCiudad" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
-          <Property Name="nIdPais" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -884,18 +875,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Ciudad_Estado">
-          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="1" />
-          <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Ciudad" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="nIdEstado" />
-            </Principal>
-            <Dependent Role="Ciudad">
-              <PropertyRef Name="nIdEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Municipio_Ciudad">
           <End Role="Ciudad" Type="DB_A06759_NOMINASModel.Ciudad" Multiplicity="1" />
           <End Role="Municipio" Type="DB_A06759_NOMINASModel.Municipio" Multiplicity="*" />
@@ -992,18 +971,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Empleado_Estado">
-          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="1" />
-          <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Estado">
-              <PropertyRef Name="nIdEstado" />
-            </Principal>
-            <Dependent Role="Empleado">
-              <PropertyRef Name="nIdEstadoNacimiento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Empleado_Ocupaciones">
           <End Role="Ocupaciones" Type="DB_A06759_NOMINASModel.Ocupaciones" Multiplicity="1" />
           <End Role="Empleado" Type="DB_A06759_NOMINASModel.Empleado" Multiplicity="*" />
@@ -1088,18 +1055,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Estado_Pais">
-          <End Role="Pais" Type="DB_A06759_NOMINASModel.Pais" Multiplicity="1" />
-          <End Role="Estado" Type="DB_A06759_NOMINASModel.Estado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pais">
-              <PropertyRef Name="nIdPais" />
-            </Principal>
-            <Dependent Role="Estado">
-              <PropertyRef Name="nIdPais" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Usuario_Rol">
           <End Role="Rol" Type="DB_A06759_NOMINASModel.Rol" Multiplicity="1" />
           <End Role="Usuario" Type="DB_A06759_NOMINASModel.Usuario" Multiplicity="*" />
@@ -1121,6 +1076,50 @@
             </Principal>
             <Dependent Role="UsuarioEmpresa">
               <PropertyRef Name="nIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="nIdEstado" />
+          </Key>
+          <Property Type="Int32" Name="nIdEstado" Nullable="false" />
+          <Property Type="String" Name="sEstado" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="nIdPais" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ciudad_Estado">
+          <End Type="DB_A06759_NOMINASModel.Estado" Role="Estado" Multiplicity="1" />
+          <End Type="DB_A06759_NOMINASModel.Ciudad" Role="Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="nIdEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleado_Estado">
+          <End Type="DB_A06759_NOMINASModel.Estado" Role="Estado" Multiplicity="1" />
+          <End Type="DB_A06759_NOMINASModel.Empleado" Role="Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="nIdEstado" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="nIdEstadoNacimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estado_Pais">
+          <End Type="DB_A06759_NOMINASModel.Pais" Role="Pais" Multiplicity="1" />
+          <End Type="DB_A06759_NOMINASModel.Estado" Role="Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="nIdPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="nIdPais" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1237,15 +1236,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Estado">
-            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Estado">
-              <MappingFragment StoreEntitySet="Estado">
-                <ScalarProperty Name="nIdEstado" ColumnName="nIdEstado" />
-                <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
-                <ScalarProperty Name="nIdPais" ColumnName="nIdPais" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Municipio">
             <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Municipio">
               <MappingFragment StoreEntitySet="Municipio">
@@ -1346,6 +1336,15 @@
                 <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
                 <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
                 <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estado">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="nIdPais" ColumnName="nIdPais" />
+                <ScalarProperty Name="sEstado" ColumnName="sEstado" />
+                <ScalarProperty Name="nIdEstado" ColumnName="nIdEstado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

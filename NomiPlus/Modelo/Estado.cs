@@ -15,7 +15,7 @@ namespace NomiPlus.Modelo
     public partial class Estado
     {
         public int nIdEstado { get; set; }
-        public string sCiudad { get; set; }
+        public string sEstado { get; set; }
         public int nIdPais { get; set; }
     }
 }

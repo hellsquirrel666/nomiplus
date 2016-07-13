@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NomiPlus.Empresa {
+namespace NomiPlus.Empresas.Empleados {
     
     
     public partial class Detalle {
@@ -22,13 +22,22 @@ namespace NomiPlus.Empresa {
         protected global::System.Web.UI.WebControls.Label lblAccion;
         
         /// <summary>
-        /// hdIdEmpleado control.
+        /// hfIdDireccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdIdEmpleado;
+        protected global::System.Web.UI.WebControls.HiddenField hfIdDireccion;
+        
+        /// <summary>
+        /// hfIdEmpleado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpleado;
         
         /// <summary>
         /// txtNombre control.
@@ -337,13 +346,13 @@ namespace NomiPlus.Empresa {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSalario;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtSDI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtSDI;
         
         /// <summary>
         /// rfvSDI control.
