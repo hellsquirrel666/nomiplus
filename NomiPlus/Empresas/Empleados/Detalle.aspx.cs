@@ -21,10 +21,22 @@ namespace NomiPlus.Empresas.Empleados
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            DireccionLogic dl = new DireccionLogic();
-            var dir = dl.ActualizarOGuardarDireccion(ObtenerDireccion());
-            EmpleadoLogic el = new EmpleadoLogic();
-            el.GuardarEmpleado(ObtenerEmpleado(dir.nIdDireccion));
+            try
+            {
+                DireccionLogic dl = new DireccionLogic();
+                var dir = dl.ActualizarOGuardarDireccion(ObtenerDireccion());
+                EmpleadoLogic el = new EmpleadoLogic();
+                el.GuardarEmpleado(ObtenerEmpleado(dir.nIdDireccion));
+            }
+            catch (Exception ex) 
+            {
+                Page.ClientScript.RegisterStartupScript(
+                    Page.GetType(),
+                    "MessageBox",
+                    "<script language='javascript'>alert('" + ex.Message + "');</script>"
+                 );
+                
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -34,7 +46,7 @@ namespace NomiPlus.Empresas.Empleados
 
         protected void txtCodigoPostal_TextChanged(object sender, EventArgs e)
         {
-
+            IncializaDdlDirecciones();
         }
 
         #region Metodos
@@ -53,7 +65,7 @@ namespace NomiPlus.Empresas.Empleados
                         Page.ClientScript.RegisterStartupScript(
                             Page.GetType(),
                             "MessageBox",
-                            "<script language='javascript'>alert('" + "No se encontró la empresa." + "');</script>"
+                            "<script language='javascript'>alert('" + "No se encontró el empleado." + "');</script>"
                          );
                         Response.Redirect("~/");
                     }
@@ -66,7 +78,7 @@ namespace NomiPlus.Empresas.Empleados
                             Page.ClientScript.RegisterStartupScript(
                                 Page.GetType(),
                                 "MessageBox",
-                                "<script language='javascript'>alert('" + "No se encontró la dirección del cliente." + "');</script>"
+                                "<script language='javascript'>alert('" + "No se encontró la dirección del empleado." + "');</script>"
                              );
                             Response.Redirect("~/");
                         }
@@ -77,7 +89,7 @@ namespace NomiPlus.Empresas.Empleados
             }
             else
             {
-                lblAccion.Text = "Nueva";
+                lblAccion.Text = "Nuevo";
             }
         }
 
@@ -119,9 +131,53 @@ namespace NomiPlus.Empresas.Empleados
         {
             Direccion direccion = new Direccion
             {
-                
+                nIdDireccion = string.IsNullOrEmpty(hfIdDireccion.Value) ? default(int) : int.Parse(hfIdDireccion.Value),
+                nIdColonia = int.Parse(ddlColonia.SelectedValue),
+                sCalle = txtCalle.Text,
+                sNoExterno = txtNumeroExterior.Text,
+                sNoInterno = txtNumeroInterior.Text
             };
             return direccion;
+        }
+
+        public void IncializaDdlDirecciones()
+        {
+            using (var _dataModel = new DB_A06759_NOMINASEntities())
+            {
+                //obtiene colonias que coinciden con CP
+                var colonias = (from c in _dataModel.Colonia
+                                where c.sCP.Equals(txtCodigoPostal.Text)
+                                select new { c.nIdColonia, c.sColonia }
+                              ).ToList();
+                //llena ddlColonia
+                ddlColonia.DataValueField = "nIdColonia";
+                ddlColonia.DataTextField = "sColonia";
+                ddlColonia.DataSource = colonias;
+                ddlColonia.DataBind();
+
+
+
+                //obtiene municipios, ciudades y estados que coinciden con CP
+                var municipios = (from c in _dataModel.Colonia
+                                  join m in _dataModel.Municipio on c.nIdMunicipio equals m.nIdMunicipio
+                                  join ciu in _dataModel.Ciudad on m.nIdCiudad equals ciu.nIdCiudad
+                                  join e in _dataModel.Estado on ciu.nIdEstado equals e.nIdEstado
+                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && e.nIdEstado == (ciu.nIdEstado)
+                                  select new { m.nIdMunicipio, m.sMunicpio, ciu.nIdCiudad, ciu.sCiudad, e.nIdEstado, e.sEstado }
+                             ).Distinct().ToList();
+
+                //llena ddlCiudad
+                ddlCiudad.DataValueField = "nIdCuidad";
+                ddlCiudad.DataTextField = "sCuidad";
+                ddlCiudad.DataSource = municipios;
+                ddlCiudad.DataBind();
+
+                //llena ddlEstado
+                ddlEstado.DataValueField = "nIdEstado";
+                ddlEstado.DataTextField = "sEstado";
+                ddlEstado.DataSource = municipios;
+                ddlEstado.DataBind();
+            }
         }
 
         public void LlenarEmpleado(Empleado empleado, Direccion dir)

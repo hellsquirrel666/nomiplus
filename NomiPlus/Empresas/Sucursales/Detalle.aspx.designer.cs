@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NomiPlus.Empresas.Empleados {
+namespace NomiPlus.Empresas.Sucursales {
     
     
     public partial class Detalle {
@@ -22,6 +22,24 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.Label lblAccion;
         
         /// <summary>
+        /// hfIdEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpresa;
+        
+        /// <summary>
+        /// hfIdSucursal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdSucursal;
+        
+        /// <summary>
         /// hfIdDireccion control.
         /// </summary>
         /// <remarks>
@@ -31,301 +49,139 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.HiddenField hfIdDireccion;
         
         /// <summary>
-        /// hfIdEmpleado control.
+        /// txtSucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpleado;
+        protected global::System.Web.UI.WebControls.TextBox txtSucursal;
         
         /// <summary>
-        /// txtNombre control.
+        /// rfvSucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSucursal;
         
         /// <summary>
-        /// rfvNombre control.
+        /// revSucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revSucursal;
         
         /// <summary>
-        /// revNombre control.
+        /// txtResponsable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtResponsable;
         
         /// <summary>
-        /// txtPaterno control.
+        /// rfvResponsable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPaterno;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvResponsable;
         
         /// <summary>
-        /// rfvPaterno control.
+        /// revResponsable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPaterno;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revResponsable;
         
         /// <summary>
-        /// revPaterno control.
+        /// txtTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPaterno;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// txtMaterno control.
+        /// rfvTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaterno;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelefono;
         
         /// <summary>
-        /// revMaterno control.
+        /// revTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revMaterno;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revTelefono;
         
         /// <summary>
-        /// ddlPeriodicidad control.
+        /// txtFax control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPeriodicidad;
+        protected global::System.Web.UI.WebControls.TextBox txtFax;
         
         /// <summary>
-        /// txtRFC control.
+        /// rfvFax control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRFC;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFax;
         
         /// <summary>
-        /// rfvRFC control.
+        /// revFax control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRFC;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFax;
         
         /// <summary>
-        /// revRFC control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revRFC;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// txtCURP control.
+        /// rfvEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCURP;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
         
         /// <summary>
-        /// rfvCURP control.
+        /// revEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCURP;
-        
-        /// <summary>
-        /// revCURP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCURP;
-        
-        /// <summary>
-        /// txtNumSeguro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumSeguro;
-        
-        /// <summary>
-        /// rfvNSS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNSS;
-        
-        /// <summary>
-        /// revNSS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNSS;
-        
-        /// <summary>
-        /// txtInfonavit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInfonavit;
-        
-        /// <summary>
-        /// rfvInfonavit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvInfonavit;
-        
-        /// <summary>
-        /// revInfornavit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revInfornavit;
-        
-        /// <summary>
-        /// txtFechaRegistro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaRegistro;
-        
-        /// <summary>
-        /// rfvFechaRegistro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaRegistro;
-        
-        /// <summary>
-        /// revRechaRegistro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revRechaRegistro;
-        
-        /// <summary>
-        /// ddlSexo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSexo;
-        
-        /// <summary>
-        /// ddlTipoTrabajador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoTrabajador;
-        
-        /// <summary>
-        /// ddlTipoSalario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoSalario;
-        
-        /// <summary>
-        /// ddlLugarDeNacimiento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLugarDeNacimiento;
-        
-        /// <summary>
-        /// txtUMF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUMF;
-        
-        /// <summary>
-        /// txtFechaAltaImss control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaAltaImss;
-        
-        /// <summary>
-        /// txtCodigoPostal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoPostal;
-        
-        /// <summary>
-        /// revCodigoPostal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCodigoPostal;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
         
         /// <summary>
         /// txtCalle control.
@@ -400,6 +256,33 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revNumeroInterior;
         
         /// <summary>
+        /// txtCodigoPostal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoPostal;
+        
+        /// <summary>
+        /// rfvCodigoPostal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodigoPostal;
+        
+        /// <summary>
+        /// revCodigoPostal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCodigoPostal;
+        
+        /// <summary>
         /// ddlColonia control.
         /// </summary>
         /// <remarks>
@@ -454,103 +337,31 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstado;
         
         /// <summary>
-        /// txtSalarioDiario control.
+        /// txtFechaRegistro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalarioDiario;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaRegistro;
         
         /// <summary>
-        /// rfvSalario control.
+        /// rfvFechaRegistro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSalario;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaRegistro;
         
         /// <summary>
-        /// txtSDI control.
+        /// revRechaRegistro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSDI;
-        
-        /// <summary>
-        /// rfvSDI control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSDI;
-        
-        /// <summary>
-        /// txtFechaBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFechaBaja;
-        
-        /// <summary>
-        /// ddlClaveCausaBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClaveCausaBaja;
-        
-        /// <summary>
-        /// txtReingreso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReingreso;
-        
-        /// <summary>
-        /// txtClaveOcupacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClaveOcupacion;
-        
-        /// <summary>
-        /// revClaveOcupacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revClaveOcupacion;
-        
-        /// <summary>
-        /// ddlSucursal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
-        
-        /// <summary>
-        /// ddlDepartamento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDepartamento;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revRechaRegistro;
         
         /// <summary>
         /// btnAceptar control.

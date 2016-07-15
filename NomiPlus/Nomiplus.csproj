@@ -170,6 +170,10 @@
     <Content Include="Empresas\Detalle.aspx" />
     <Content Include="Empresas\Empleados\Default.aspx" />
     <Content Include="Empresas\Empleados\Detalle.aspx" />
+    <Content Include="Empresas\Sucursales\Default.aspx" />
+    <Content Include="Empresas\Sucursales\Departamentos\Default.aspx" />
+    <Content Include="Empresas\Sucursales\Departamentos\Detalle.aspx" />
+    <Content Include="Empresas\Sucursales\Detalle.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -198,6 +202,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NomiPlusDB.edmx</DependentUpon>
       <LastGenOutput>NomiPlusDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -281,12 +289,42 @@
     <Compile Include="Empresas\Empleados\Detalle.aspx.designer.cs">
       <DependentUpon>Detalle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empresas\Sucursales\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Departamentos\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Departamentos\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Departamentos\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Departamentos\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresas\Sucursales\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LogicObjects\DepartamentoLogic.cs" />
     <Compile Include="LogicObjects\DireccionLogic.cs" />
     <Compile Include="LogicObjects\EmpleadoLogic.cs" />
     <Compile Include="LogicObjects\EmpresaLogic.cs" />
+    <Compile Include="LogicObjects\SucursalLogic.cs" />
     <Compile Include="Modelo\CausaBaja.cs">
       <DependentUpon>NomiPlusDB.tt</DependentUpon>
     </Compile>
@@ -357,6 +395,11 @@
       <DependentUpon>NomiPlusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -403,7 +446,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>1391</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:5341/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
