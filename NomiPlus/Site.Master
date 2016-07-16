@@ -91,33 +91,28 @@
 		            <div class="container">
 			            <ul class="mainnav">
 				            <li>
-					            <a href="index.html">
-						            <i class="icon-dashboard"></i>
-						            <span>Dashboard</span>
+					            <a href="~/">
+						            <i class="icon icon-home"></i>
+						            <span>Inicio</span>
 					            </a>	    				
 				            </li>
 				            <li>
-					            <a href="reports.html">
-						            <i class="icon-list-alt"></i>
-						            <span>Reports</span>
+					            <a href="~/Empresas">
+						            <i class="icon icon-group"></i>
+						            <span>Empresas</span>
 					            </a>    				
 				            </li>
 				            <li>					
-					            <a href="guidely.html">
-						            <i class="icon-facetime-video"></i>
-						            <span>App Tour</span>
+					            <a href="~/Nominas">
+						            <i class="icon icon-book"></i>
+						            <span>Nòminas</span>
 					            </a>  									
 				            </li>
                             <li>					
-					            <a href="charts.html">
+					            <a href="~/Reportes">
 						            <i class="icon-bar-chart"></i>
-						            <span>Charts</span>
-					            </a>  									
-				            </li>
-                            <li class="active">					
-					            <a href="shortcodes.html">
-						            <i class="icon-code"></i>
-						            <span>Shortcodes</span>
+						            <span>Reportes
+						            </span>
 					            </a>  									
 				            </li>
 				            <li class="dropdown">					
@@ -144,10 +139,8 @@
 	                <div class="container">
 	                  <div class="row">
 	      	            <div class="span12">      		
-	      		            <div class="widget ">
-                                <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                                </asp:ContentPlaceHolder>
-				            </div> <!-- /widget -->
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
 		                </div> <!-- /span8 -->
 	                  </div> <!-- /row -->
 	                </div> <!-- /container -->

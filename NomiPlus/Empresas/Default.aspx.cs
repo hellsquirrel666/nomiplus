@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NomiPlus.LogicObjects;
+using NomiPlus.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,26 @@ namespace NomiPlus.Empresas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                InitializeControls();
+            }
+            catch
+            {
+                Page.ClientScript.RegisterStartupScript(
+                Page.GetType(),
+                "MessageBox",
+                "<script language='javascript'>alert('" + "Ha ocurrido un error al cargar a pagina." + "');</script>"
+                );
+            }
+        }
 
+        public void InitializeControls()
+        {
+            EmpresaLogic pl = new EmpresaLogic();
+            var lista = pl.ListaEmpresas();
+            gvPacientes.DataSource = lista;
+            gvPacientes.DataBind();
         }
     }
 }
