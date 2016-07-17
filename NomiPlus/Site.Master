@@ -91,25 +91,25 @@
 		            <div class="container">
 			            <ul class="mainnav">
 				            <li>
-					            <a href="~/">
+					            <a href='<%=Page.ResolveUrl("~/") %>'>
 						            <i class="icon icon-home"></i>
 						            <span>Inicio</span>
 					            </a>	    				
 				            </li>
 				            <li>
-					            <a href="~/Empresas">
+					            <a href='<%=Page.ResolveUrl("~/Empresas") %>'>
 						            <i class="icon icon-group"></i>
 						            <span>Empresas</span>
 					            </a>    				
 				            </li>
 				            <li>					
-					            <a href="~/Nominas">
+					            <a href='<%=Page.ResolveUrl("~/Nominas") %>'>
 						            <i class="icon icon-book"></i>
 						            <span>Nòminas</span>
 					            </a>  									
 				            </li>
                             <li>					
-					            <a href="~/Reportes">
+					            <a href='<%=Page.ResolveUrl("~/Reportes") %>'>
 						            <i class="icon-bar-chart"></i>
 						            <span>Reportes
 						            </span>

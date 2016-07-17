@@ -17,5 +17,7 @@ namespace NomiPlus.Modelo
         public int nIdCiudad { get; set; }
         public string sCiudad { get; set; }
         public int nIdEstado { get; set; }
+    
+        public virtual Estado Estado { get; set; }
     }
 }

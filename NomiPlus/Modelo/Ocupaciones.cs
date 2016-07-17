@@ -14,8 +14,15 @@ namespace NomiPlus.Modelo
     
     public partial class Ocupaciones
     {
+        public Ocupaciones()
+        {
+            this.Empleado = new HashSet<Empleado>();
+        }
+    
         public int nIdOcupacion { get; set; }
         public string sOcupacion { get; set; }
         public bool bActivo { get; set; }
+    
+        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

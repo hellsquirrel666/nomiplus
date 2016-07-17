@@ -14,8 +14,15 @@ namespace NomiPlus.Modelo
     
     public partial class CausaBaja
     {
+        public CausaBaja()
+        {
+            this.Empleado = new HashSet<Empleado>();
+        }
+    
         public int nIdCausaBaja { get; set; }
         public string sCausaBaja { get; set; }
         public bool bActivo { get; set; }
+    
+        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

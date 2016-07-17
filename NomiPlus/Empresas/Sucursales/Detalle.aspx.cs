@@ -166,8 +166,8 @@ namespace NomiPlus.Empresas.Sucursales
                              ).Distinct().ToList();
 
                 //llena ddlCiudad
-                ddlCiudad.DataValueField = "nIdCuidad";
-                ddlCiudad.DataTextField = "sCuidad";
+                ddlCiudad.DataValueField = "nIdCiudad";
+                ddlCiudad.DataTextField = "sCiudad";
                 ddlCiudad.DataSource = municipios;
                 ddlCiudad.DataBind();
 

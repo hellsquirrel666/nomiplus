@@ -97,7 +97,7 @@
                     <td>Código postal
                     </td>
                     <td>
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" OnTextChanged="txtCodigoPostal_TextChanged" />
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" OnTextChanged="txtCodigoPostal_TextChanged" AutoPostBack="true" />
                     </td>
                     <td>
                         <asp:RequiredFieldValidator runat="server" ID="rfvCodigoPostal" ControlToValidate="txtCodigoPostal" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
@@ -114,6 +114,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                        Delegacion / Municipio:
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlDelegacion" Width="210px"></asp:DropDownList>
+                    </td>
+                    <td></td>
                     <td>Ciudad
                     </td>
                     <td>
@@ -130,6 +137,8 @@
                     <td>
                         <asp:RequiredFieldValidator runat="server" ID="rfvEstado" ControlToValidate="ddlEstado" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                     </td>
+                </tr>
+                <tr>
                     <td>Representante legal
                     </td>
                     <td>
@@ -140,8 +149,6 @@
                         <asp:RegularExpressionValidator runat="server" ID="revNombreContacto" ControlToValidate="txtRepresentante" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
                             ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.#\s\-]{1,150}" />
                     </td>
-                </tr>
-                <tr>
                     <td>Email contacto
                     </td>
                     <td>
@@ -161,6 +168,8 @@
                         <asp:RegularExpressionValidator runat="server" ID="revTelefono" ControlToValidate="txtTelefono" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
                             ValidationExpression="[a-zA-Z0-9\+\(\)\s\-]{1,50}" />
                     </td>
+                </tr>
+                <tr>
                     <td>Fax
                     </td>
                     <td>
@@ -170,8 +179,6 @@
                         <asp:RegularExpressionValidator runat="server" ID="revFax" ControlToValidate="txtFax" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
                             ValidationExpression="[a-zA-Z0-9\+\(\)\s\-]{1,255}" />
                     </td>
-                </tr>
-                <tr>
                     <td>Página web
                     </td>
                     <td>
@@ -192,17 +199,17 @@
                     </td>
                 </tr>
             </table>
-            </br>
-            </br>
-            </br>
-            <table class="large-table">
+                </br>
+            <table style="width:100%">
                 <tr>
-                    <td class="text-right">
-                        <asp:Button runat="server" ID="btnAceptar" OnClick="btnAceptar_Click" Text="Guardar" CssClass="btn btn-primary"
+                       <td style="text-align:right;">
+                         <asp:Button runat="server" ID="btnAceptar" OnClick="btnAceptar_Click" Text="Guardar" CssClass="btn btn-primary"
                             OnClientClick="return Validate('¿Estás seguro que deseas guardar datos de la empresa?');" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-danger" CausesValidation="False"
                             OnClientClick="return confirm('¿Estás seguro que deseas volver sin guardar los cambios?');" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
             </table>

@@ -27,6 +27,16 @@ namespace NomiPlus.Empresas
             }
         }
 
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/");
+        }
+
+        protected void btnNuevaEmpresa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresas/Detalle");
+        }
+
         public void InitializeControls()
         {
             EmpresaLogic pl = new EmpresaLogic();

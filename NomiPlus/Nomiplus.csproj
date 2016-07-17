@@ -164,7 +164,6 @@
     <Content Include="Content\css\pages\signin.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\style.css" />
-    <Content Include="Content\themes.css" />
     <Content Include="Default.aspx" />
     <Content Include="Empresas\Default.aspx" />
     <Content Include="Empresas\Detalle.aspx" />

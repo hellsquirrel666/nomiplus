@@ -32,6 +32,7 @@ namespace NomiPlus.Modelo
         public DbSet<Direccion> Direccion { get; set; }
         public DbSet<Empleado> Empleado { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
+        public DbSet<Estado> Estado { get; set; }
         public DbSet<Municipio> Municipio { get; set; }
         public DbSet<Ocupaciones> Ocupaciones { get; set; }
         public DbSet<Pais> Pais { get; set; }
@@ -42,6 +43,5 @@ namespace NomiPlus.Modelo
         public DbSet<TipoTrabajador> TipoTrabajador { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<UsuarioEmpresa> UsuarioEmpresa { get; set; }
-        public DbSet<Estado> Estado { get; set; }
     }
 }

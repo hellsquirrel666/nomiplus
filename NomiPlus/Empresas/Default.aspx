@@ -28,14 +28,40 @@
                                             <asp:LinkButton ID="lbtnEditar" runat="server" Text="Editar" 
                                                 PostBackUrl='<%# string.Format("~/Empresas/Detalle?Empresa={0}", Item.nIdEmpresa) %>'/>
                                         </li>
+                                        <li role="presentation">
+                                            <asp:LinkButton ID="lbtnSucursales" runat="server" Text="Ver sucursales" 
+                                                PostBackUrl='<%# string.Format("~/Empresas/Sucursales/?Empresa={0}", Item.nIdEmpresa) %>'/>
+                                        </li>
+                                        <li role="presentation">
+                                            <asp:LinkButton ID="lbtnEmpleados" runat="server" Text="Ver empleados" 
+                                                PostBackUrl='<%# string.Format("~/Empresas/Empleados/?Empresa={0}", Item.nIdEmpresa) %>'/>
+                                        </li>
+                                        <li role="presentation">
+                                            <asp:LinkButton ID="lbtnNominas" runat="server" Text="Ver Nominas" 
+                                                PostBackUrl='<%# string.Format("~/Nominas?Empresa={0}", Item.nIdEmpresa) %>'/>
+                                        </li>
                                     </ul>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-            </div>
-            <!-- /widget-content --> 
+                    </br>
+                    <table style="width:100%;">
+                    <tr>
+                        <td style="text-align:right;">
+                            <asp:Button runat="server" ID="btnNuevaEmpresa" OnClick="btnNuevaEmpresa_Click" 
+                                CssClass="btn btn-primary" Text="Nueva Empresa" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click"
+                                CssClass="btn btn-danger" Text="Regresar" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+            <!-- /widget-content -->
+            </div> 
           </div>
           <!-- /widget -->    
 </asp:Content>

@@ -29,7 +29,7 @@ namespace NomiPlus.Empresas
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/");
+            Response.Redirect("~/Empresas/");
         }
 
         protected void txtCodigoPostal_TextChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace NomiPlus.Empresas
                             "MessageBox",
                             "<script language='javascript'>alert('" + "No se encontró la empresa." + "');</script>"
                          );
-                        Response.Redirect("~/");
+                        Response.Redirect("~/Empresas/");
                     }
                     else
                     {
@@ -68,7 +68,7 @@ namespace NomiPlus.Empresas
                                 "MessageBox",
                                 "<script language='javascript'>alert('" + "No se encontró la dirección del cliente." + "');</script>"
                              );
-                            Response.Redirect("~/");
+                            Response.Redirect("~/Empresas/");
                         }
                         lblAccion.Text = "Editar";
                         LlenarEmpresa(empresa, dir);
@@ -130,20 +130,24 @@ namespace NomiPlus.Empresas
                 ddlColonia.DataSource = colonias;
                 ddlColonia.DataBind();
 
-
-
                 //obtiene municipios, ciudades y estados que coinciden con CP
                 var municipios = (from c in _dataModel.Colonia
                                   join m in _dataModel.Municipio on c.nIdMunicipio equals m.nIdMunicipio
                                   join ciu in _dataModel.Ciudad on m.nIdCiudad equals ciu.nIdCiudad
                                   join e in _dataModel.Estado on ciu.nIdEstado equals e.nIdEstado
-                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && e.nIdEstado == (ciu.nIdEstado)
+                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && m.nIdEstado == (ciu.nIdEstado) && c.nIdEstado == m.nIdEstado
                                   select new { m.nIdMunicipio, m.sMunicpio, ciu.nIdCiudad, ciu.sCiudad, e.nIdEstado, e.sEstado }
                              ).Distinct().ToList();
 
+                //llena ddlDelegacion
+                ddlDelegacion.DataValueField = "nIdMunicipio";
+                ddlDelegacion.DataTextField = "sMunicpio";
+                ddlDelegacion.DataSource = municipios;
+                ddlDelegacion.DataBind();
+
                 //llena ddlCiudad
-                ddlCiudad.DataValueField = "nIdCuidad";
-                ddlCiudad.DataTextField = "sCuidad";
+                ddlCiudad.DataValueField = "nIdCiudad";
+                ddlCiudad.DataTextField = "sCiudad";
                 ddlCiudad.DataSource = municipios;
                 ddlCiudad.DataBind();
 
@@ -154,7 +158,6 @@ namespace NomiPlus.Empresas
                 ddlEstado.DataBind();
             }
         }
-
 
         public void LlenarEmpresa(Empresa empresa, Direccion dir)
         {

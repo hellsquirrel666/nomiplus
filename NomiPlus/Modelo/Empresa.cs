@@ -14,6 +14,12 @@ namespace NomiPlus.Modelo
     
     public partial class Empresa
     {
+        public Empresa()
+        {
+            this.Sucursal = new HashSet<Sucursal>();
+            this.UsuarioEmpresa = new HashSet<UsuarioEmpresa>();
+        }
+    
         public int nIdEmpresa { get; set; }
         public string sRazonSocial { get; set; }
         public string sRFC { get; set; }
@@ -28,5 +34,9 @@ namespace NomiPlus.Modelo
         public Nullable<System.DateTime> sFechaRegistro { get; set; }
         public string sLogo { get; set; }
         public Nullable<bool> bActivo { get; set; }
+    
+        public virtual Direccion Direccion { get; set; }
+        public virtual ICollection<Sucursal> Sucursal { get; set; }
+        public virtual ICollection<UsuarioEmpresa> UsuarioEmpresa { get; set; }
     }
 }

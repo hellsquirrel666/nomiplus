@@ -18,5 +18,8 @@ namespace NomiPlus.Modelo
         public int nIdUsuario { get; set; }
         public int nIdEmpresa { get; set; }
         public bool bActivo { get; set; }
+    
+        public virtual Empresa Empresa { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

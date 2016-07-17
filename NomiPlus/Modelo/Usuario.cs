@@ -14,6 +14,11 @@ namespace NomiPlus.Modelo
     
     public partial class Usuario
     {
+        public Usuario()
+        {
+            this.UsuarioEmpresa = new HashSet<UsuarioEmpresa>();
+        }
+    
         public int nIdUsuario { get; set; }
         public string sNombre { get; set; }
         public string sPrimerApellido { get; set; }
@@ -23,5 +28,8 @@ namespace NomiPlus.Modelo
         public string sContraseña { get; set; }
         public bool bActivo { get; set; }
         public string nIdEmpresa { get; set; }
+    
+        public virtual Rol Rol { get; set; }
+        public virtual ICollection<UsuarioEmpresa> UsuarioEmpresa { get; set; }
     }
 }
