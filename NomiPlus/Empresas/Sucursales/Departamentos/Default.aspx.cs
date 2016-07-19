@@ -27,6 +27,16 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos
             }
         }
 
+        protected void btnNuevaEmpresa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresas/Sucursales/Departamentos/Detalle?Sucursal=" + hfIdSucursal.Value);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresas/Sucursales/?Empresa=" + hfIdEmpresa.Value);
+        }
+
         public void InitializeControls()
         {
             var idSucursal = Request.QueryString["Sucursal"];
@@ -48,12 +58,14 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos
                     }
                     else
                     {
+                        hfIdSucursal.Value = idSuc.ToString();
                         EmpresaLogic el = new EmpresaLogic();
                         Empresa empresa = el.ObtenerEmpresa(sucursal.nIdEmpresa);
-                        lblNombre.Text = sucursal.sNombreSucursal +" de la empresa "+ empresa.sRazonSocial;
+                        hfIdEmpresa.Value = empresa.nIdEmpresa.ToString();
+                        lblNombre.Text = "Sucursal " + sucursal.sNombreSucursal +" de la empresa "+ empresa.sRazonSocial;
 
-                        SucursalLogic pl = new SucursalLogic();
-                        var lista = pl.ListaSucursales();
+                        DepartamentoLogic dl = new DepartamentoLogic();
+                        var lista = dl.ListaDepartamentos();
                         gvDepartamentos.DataSource = lista;
                         gvDepartamentos.DataBind();
                     }
@@ -68,16 +80,6 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos
                  );
                 Response.Redirect("~/Empresas");
             }
-        }
-
-        protected void btnNuevaEmpresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -11,13 +11,14 @@
         <i class="icon-list"></i>
             <h3><asp:Label runat="server" ID="lblNombre" /></h3>
         </div>
+        <asp:HiddenField runat="server" ID="hfIdEmpresa" Visible="false" />
         <div class="widget-content">
             <asp:GridView runat="server" ID="gvSucursales" CssClass="table table-condensed table-bordered table-hover" ItemType="NomiPlus.Modelo.Sucursal" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true">
                 <Columns>
                     <asp:BoundField HeaderText="Sucursal" DataField="sNombreSucursal" />
                     <asp:BoundField HeaderText="Encargado" DataField="sNombreEncargado" />
                     <asp:BoundField HeaderText="Telefono" DataField="sTelefono" />
-                    <asp:BoundField HeaderText="E-mail" DataField="sEmailContacto" />
+                    <asp:BoundField HeaderText="E-mail" DataField="sEmail" />
                     <asp:BoundField HeaderText="Fax" DataField="sFax" />
                     <asp:TemplateField ItemStyle-CssClass="gridview_menu">
                         <ItemTemplate>
@@ -26,7 +27,11 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddmOpciones">
                                     <li role="presentation">
                                         <asp:LinkButton ID="lbtnEditar" runat="server" Text="Editar" 
-                                            PostBackUrl='<%# string.Format("~/Empresas/Sucursales/Detalle?Empresa{0}&Sucursal={1}",Item.nIdEmpresa, Item.nIdSucursal) %>'/>
+                                            PostBackUrl='<%# string.Format("~/Empresas/Sucursales/Detalle?Empresa={0}&Sucursal={1}",Item.nIdEmpresa, Item.nIdSucursal) %>'/>
+                                    </li>
+                                    <li role="presentation">
+                                        <asp:LinkButton ID="lbtnDepartamentos" runat="server" Text="Ver departamentos" 
+                                            PostBackUrl='<%# string.Format("~/Empresas/Sucursales/Departamentos/?Sucursal={0}", Item.nIdSucursal) %>'/>
                                     </li>
                                 </ul>
                             </div>

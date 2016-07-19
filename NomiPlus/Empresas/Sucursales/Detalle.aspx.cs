@@ -29,7 +29,7 @@ namespace NomiPlus.Empresas.Sucursales
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Empresas/Sucursales");
+            Response.Redirect("~/Empresas/Sucursales?Empresa="+hfIdEmpresa.Value);
         }
 
         protected void txtCodigoPostal_TextChanged(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace NomiPlus.Empresas.Sucursales
                 int idEmp;
                 if (int.TryParse(idEmpresa, out idEmp))
                 {
-                    hfIdSucursal.Value = idEmp.ToString();
+                    hfIdEmpresa.Value = idEmp.ToString();
                 }
                 else
                 {
@@ -70,8 +70,8 @@ namespace NomiPlus.Empresas.Sucursales
             }
             if (!string.IsNullOrEmpty(idSucursal))
             {
-                int idPac;
-                if (int.TryParse(idSucursal, out idPac))
+                int idSuc;
+                if (int.TryParse(idSucursal, out idSuc))
                 {
                     SucursalLogic pl = new SucursalLogic();
                     Sucursal sucursal = pl.ObtenerSucursal(int.Parse(idSucursal));
@@ -98,6 +98,7 @@ namespace NomiPlus.Empresas.Sucursales
                             Response.Redirect("~/");
                         }
                         lblAccion.Text = "Editar";
+                        hfIdSucursal.Value = idSuc.ToString();
                         LlenarSucursal(sucursal, dir);
                     }
                 }
@@ -113,7 +114,7 @@ namespace NomiPlus.Empresas.Sucursales
             Sucursal sucursal = new Sucursal()
             {
                 nIdSucursal = string.IsNullOrEmpty(hfIdSucursal.Value) ? default(int) : int.Parse(hfIdSucursal.Value),
-                nIdEmpresa = int.Parse(hfIdSucursal.Value),
+                nIdEmpresa = int.Parse(hfIdEmpresa.Value),
                 sNombreSucursal = txtSucursal.Text,
                 sNombreEncargado = txtResponsable.Text,
                 sTelefono = txtTelefono.Text,
@@ -154,16 +155,20 @@ namespace NomiPlus.Empresas.Sucursales
                 ddlColonia.DataSource = colonias;
                 ddlColonia.DataBind();
 
-
-
                 //obtiene municipios, ciudades y estados que coinciden con CP
                 var municipios = (from c in _dataModel.Colonia
                                   join m in _dataModel.Municipio on c.nIdMunicipio equals m.nIdMunicipio
                                   join ciu in _dataModel.Ciudad on m.nIdCiudad equals ciu.nIdCiudad
                                   join e in _dataModel.Estado on ciu.nIdEstado equals e.nIdEstado
-                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && e.nIdEstado == (ciu.nIdEstado)
+                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && m.nIdEstado == (ciu.nIdEstado) && c.nIdEstado == m.nIdEstado
                                   select new { m.nIdMunicipio, m.sMunicpio, ciu.nIdCiudad, ciu.sCiudad, e.nIdEstado, e.sEstado }
                              ).Distinct().ToList();
+
+                //llena ddlDelegacion
+                ddlDelegacion.DataValueField = "nIdMunicipio";
+                ddlDelegacion.DataTextField = "sMunicpio";
+                ddlDelegacion.DataSource = municipios;
+                ddlDelegacion.DataBind();
 
                 //llena ddlCiudad
                 ddlCiudad.DataValueField = "nIdCiudad";
@@ -178,7 +183,6 @@ namespace NomiPlus.Empresas.Sucursales
                 ddlEstado.DataBind();
             }
         }
-
 
         public void LlenarSucursal(Sucursal sucursal, Direccion dir)
         {

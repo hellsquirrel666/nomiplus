@@ -40,15 +40,5 @@ namespace NomiPlus.Modelo
         public int nIdOcupacion { get; set; }
         public int nIdSucursal { get; set; }
         public bool bActivo { get; set; }
-    
-        public virtual CausaBaja CausaBaja { get; set; }
-        public virtual Departamento Departamento { get; set; }
-        public virtual Direccion Direccion { get; set; }
-        public virtual Estado Estado { get; set; }
-        public virtual Ocupaciones Ocupaciones { get; set; }
-        public virtual Periodicidad Periodicidad { get; set; }
-        public virtual Sucursal Sucursal { get; set; }
-        public virtual TipoSalario TipoSalario { get; set; }
-        public virtual TipoTrabajador TipoTrabajador { get; set; }
     }
 }

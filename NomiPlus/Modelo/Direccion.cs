@@ -14,22 +14,10 @@ namespace NomiPlus.Modelo
     
     public partial class Direccion
     {
-        public Direccion()
-        {
-            this.Empleado = new HashSet<Empleado>();
-            this.Empresa = new HashSet<Empresa>();
-            this.Sucursal = new HashSet<Sucursal>();
-        }
-    
         public int nIdDireccion { get; set; }
         public string sCalle { get; set; }
         public string sNoInterno { get; set; }
         public string sNoExterno { get; set; }
         public Nullable<int> nIdColonia { get; set; }
-    
-        public virtual Colonia Colonia { get; set; }
-        public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual ICollection<Empresa> Empresa { get; set; }
-        public virtual ICollection<Sucursal> Sucursal { get; set; }
     }
 }

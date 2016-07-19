@@ -14,18 +14,8 @@ namespace NomiPlus.Modelo
     
     public partial class Estado
     {
-        public Estado()
-        {
-            this.Ciudad = new HashSet<Ciudad>();
-            this.Empleado = new HashSet<Empleado>();
-        }
-    
         public int nIdEstado { get; set; }
         public string sEstado { get; set; }
         public int nIdPais { get; set; }
-    
-        public virtual ICollection<Ciudad> Ciudad { get; set; }
-        public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual Pais Pais { get; set; }
     }
 }

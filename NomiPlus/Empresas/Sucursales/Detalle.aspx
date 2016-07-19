@@ -31,7 +31,7 @@
             <td style="width:30px">
                 <asp:RequiredFieldValidator runat="server" ID="rfvResponsable" ControlToValidate="txtResponsable" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                 <asp:RegularExpressionValidator runat="server" ID="revResponsable" ControlToValidate="txtResponsable" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ9.s\-]{1,150}" />
+                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ9.s\-\ ]{1,150}" />
             </td>
         </tr>
         <tr>
@@ -65,7 +65,7 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvEmail" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                 <asp:RegularExpressionValidator runat="server" ID="revEmail" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.#\s\-]{1,150}" />
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
             </td>
             <td>Calle
             </td>
@@ -103,7 +103,7 @@
             <td>Código postal
             </td>
             <td>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" OnTextChanged="txtCodigoPostal_TextChanged" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtCodigoPostal" Width="200px" OnTextChanged="txtCodigoPostal_TextChanged" AutoPostBack="true" />
             </td>
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvCodigoPostal" ControlToValidate="txtCodigoPostal" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
@@ -120,6 +120,13 @@
             </td>
         </tr>
         <tr>
+            <td>
+                Delegacion / Municipio:
+            </td>
+            <td>
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlDelegacion" Width="210px" ></asp:DropDownList>
+            </td>
+            <td></td>
             <td>Ciudad
             </td>
             <td>
@@ -128,6 +135,8 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvCiudad" ControlToValidate="ddlCiudad" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
+        </tr>
+        <tr>
             <td>Estado
             </td>
             <td>
@@ -136,9 +145,6 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvEstado" ControlToValidate="ddlEstado" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
-
-        </tr>
-        <tr>
             <td>Fecha de registro</td>
             <td>
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtFechaRegistro" Width="200px" placeholder="dd/mm/aaaa" />

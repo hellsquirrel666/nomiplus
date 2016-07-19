@@ -14,18 +14,11 @@ namespace NomiPlus.Modelo
     
     public partial class Colonia
     {
-        public Colonia()
-        {
-            this.Direccion = new HashSet<Direccion>();
-        }
-    
         public int nIdColonia { get; set; }
         public string sColonia { get; set; }
         public string sCP { get; set; }
         public int nIdMunicipio { get; set; }
         public int nIdCiudad { get; set; }
         public int nIdEstado { get; set; }
-    
-        public virtual ICollection<Direccion> Direccion { get; set; }
     }
 }

@@ -301,6 +301,15 @@ namespace NomiPlus.Empresas.Sucursales {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvColonia;
         
         /// <summary>
+        /// ddlDelegacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDelegacion;
+        
+        /// <summary>
         /// ddlCiudad control.
         /// </summary>
         /// <remarks>

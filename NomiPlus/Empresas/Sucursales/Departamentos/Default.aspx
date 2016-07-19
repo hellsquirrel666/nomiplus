@@ -12,12 +12,14 @@
             <h3><asp:Label runat="server" ID="lblNombre" /></h3>
         </div>
         <div class="widget-content">
+            <asp:HiddenField runat="server" ID="hfIdSucursal" Visible="false" />
+            <asp:HiddenField runat="server" ID="hfIdEmpresa" Visible="false" />
             <asp:GridView runat="server" ID="gvDepartamentos" CssClass="table table-condensed table-bordered table-hover" ItemType="NomiPlus.Modelo.Departamento" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true">
                 <Columns>
                     <asp:BoundField HeaderText="Departamento" DataField="sDepartamento" />
                     <asp:BoundField HeaderText="Encargado" DataField="sNombreEncargado" />
                     <asp:BoundField HeaderText="Telefono" DataField="sTelefono" />
-                    <asp:BoundField HeaderText="E-mail" DataField="sEmailContacto" />
+                    <asp:BoundField HeaderText="E-mail" DataField="sEmail" />
                     <asp:BoundField HeaderText="Fax" DataField="sFax" />
                     <asp:TemplateField ItemStyle-CssClass="gridview_menu">
                         <ItemTemplate>
@@ -26,7 +28,7 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddmOpciones">
                                     <li role="presentation">
                                         <asp:LinkButton ID="lbtnEditar" runat="server" Text="Editar" 
-                                            PostBackUrl='<%# string.Format("~/Empresas/Sucursales/Departamentos/Detalle?Sucursal={0}&Departamento{1}",Item.nIdSucursal , Item.nIdDepartamento) %>'/>
+                                            PostBackUrl='<%# string.Format("~/Empresas/Sucursales/Departamentos/Detalle?Sucursal={0}&Departamento={1}",Item.nIdSucursal , Item.nIdDepartamento) %>'/>
                                     </li>
                                 </ul>
                             </div>
@@ -39,7 +41,7 @@
                 <tr>
                     <td style="text-align:right;">
                         <asp:Button runat="server" ID="btnNuevoDepartamento" OnClick="btnNuevaEmpresa_Click" 
-                            CssClass="btn btn-primary" Text="Nueva Departamento" />
+                            CssClass="btn btn-primary" Text="Nuevo departamento" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click"

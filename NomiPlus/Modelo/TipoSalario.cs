@@ -14,15 +14,8 @@ namespace NomiPlus.Modelo
     
     public partial class TipoSalario
     {
-        public TipoSalario()
-        {
-            this.Empleado = new HashSet<Empleado>();
-        }
-    
         public int nIdTipoSalario { get; set; }
         public string sTipoSalario { get; set; }
         public bool bActivo { get; set; }
-    
-        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

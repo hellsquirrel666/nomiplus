@@ -641,7 +641,6 @@
           <Property Type="Int32" Name="nIdCausaBaja" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sCausaBaja" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_CausaBaja" FromRole="CausaBaja" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Ciudad">
           <Key>
@@ -651,7 +650,6 @@
           <Property Type="Int32" Name="nIdCiudad" Nullable="false" />
           <Property Type="String" Name="sCiudad" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="nIdEstado" Nullable="false" />
-          <NavigationProperty Name="Estado" Relationship="DB_A06759_NOMINASModel.FK_Ciudad_Estado" FromRole="Ciudad" ToRole="Estado" />
         </EntityType>
         <EntityType Name="Colonia">
           <Key>
@@ -663,7 +661,6 @@
           <Property Type="Int32" Name="nIdMunicipio" Nullable="false" />
           <Property Type="Int32" Name="nIdCiudad" Nullable="false" />
           <Property Type="Int32" Name="nIdEstado" Nullable="false" />
-          <NavigationProperty Name="Direccion" Relationship="DB_A06759_NOMINASModel.FK_Direccion_Colonia" FromRole="Colonia" ToRole="Direccion" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
@@ -677,8 +674,6 @@
           <Property Type="String" Name="sFax" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="sEmail" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Sucursal" Relationship="DB_A06759_NOMINASModel.FK_Departamento_Sucursal" FromRole="Departamento" ToRole="Sucursal" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Departamento" FromRole="Departamento" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Direccion">
           <Key>
@@ -689,10 +684,6 @@
           <Property Type="String" Name="sNoInterno" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="sNoExterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="nIdColonia" />
-          <NavigationProperty Name="Colonia" Relationship="DB_A06759_NOMINASModel.FK_Direccion_Colonia" FromRole="Direccion" ToRole="Colonia" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Direccion" FromRole="Direccion" ToRole="Empleado" />
-          <NavigationProperty Name="Empresa" Relationship="DB_A06759_NOMINASModel.FK_Empresa_Direccion" FromRole="Direccion" ToRole="Empresa" />
-          <NavigationProperty Name="Sucursal" Relationship="DB_A06759_NOMINASModel.FK_Sucursal_Direccion" FromRole="Direccion" ToRole="Sucursal" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -724,15 +715,6 @@
           <Property Type="Int32" Name="nIdOcupacion" Nullable="false" />
           <Property Type="Int32" Name="nIdSucursal" Nullable="false" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="CausaBaja" Relationship="DB_A06759_NOMINASModel.FK_Empleado_CausaBaja" FromRole="Empleado" ToRole="CausaBaja" />
-          <NavigationProperty Name="Departamento" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Departamento" FromRole="Empleado" ToRole="Departamento" />
-          <NavigationProperty Name="Direccion" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Direccion" FromRole="Empleado" ToRole="Direccion" />
-          <NavigationProperty Name="Estado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Estado" FromRole="Empleado" ToRole="Estado" />
-          <NavigationProperty Name="Ocupaciones" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Ocupaciones" FromRole="Empleado" ToRole="Ocupaciones" />
-          <NavigationProperty Name="Periodicidad" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Periodicidad" FromRole="Empleado" ToRole="Periodicidad" />
-          <NavigationProperty Name="Sucursal" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Sucursal" FromRole="Empleado" ToRole="Sucursal" />
-          <NavigationProperty Name="TipoSalario" Relationship="DB_A06759_NOMINASModel.FK_Empleado_TipoSalario" FromRole="Empleado" ToRole="TipoSalario" />
-          <NavigationProperty Name="TipoTrabajador" Relationship="DB_A06759_NOMINASModel.FK_Empleado_TipoTrabajador" FromRole="Empleado" ToRole="TipoTrabajador" />
         </EntityType>
         <EntityType Name="Empresa">
           <Key>
@@ -752,9 +734,6 @@
           <Property Type="DateTime" Name="sFechaRegistro" Precision="0" />
           <Property Type="String" Name="sLogo" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" />
-          <NavigationProperty Name="Direccion" Relationship="DB_A06759_NOMINASModel.FK_Empresa_Direccion" FromRole="Empresa" ToRole="Direccion" />
-          <NavigationProperty Name="Sucursal" Relationship="DB_A06759_NOMINASModel.FK_Sucursal_Empresa" FromRole="Empresa" ToRole="Sucursal" />
-          <NavigationProperty Name="UsuarioEmpresa" Relationship="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Empresa" FromRole="Empresa" ToRole="UsuarioEmpresa" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -763,9 +742,6 @@
           <Property Type="Int32" Name="nIdEstado" Nullable="false" />
           <Property Type="String" Name="sEstado" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="nIdPais" Nullable="false" />
-          <NavigationProperty Name="Ciudad" Relationship="DB_A06759_NOMINASModel.FK_Ciudad_Estado" FromRole="Estado" ToRole="Ciudad" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Estado" FromRole="Estado" ToRole="Empleado" />
-          <NavigationProperty Name="Pais" Relationship="DB_A06759_NOMINASModel.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -785,7 +761,6 @@
           <Property Type="Int32" Name="nIdOcupacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sOcupacion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Ocupaciones" FromRole="Ocupaciones" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -793,7 +768,6 @@
           </Key>
           <Property Type="Int32" Name="nIdPais" Nullable="false" />
           <Property Type="String" Name="sPais" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Estado" Relationship="DB_A06759_NOMINASModel.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
         </EntityType>
         <EntityType Name="Periodicidad">
           <Key>
@@ -802,7 +776,6 @@
           <Property Type="Int32" Name="nIdPeriodicidad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sPeriodicidad" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Periodicidad" FromRole="Periodicidad" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -811,7 +784,6 @@
           <Property Type="Int32" Name="nIdRol" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sDescripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="DB_A06759_NOMINASModel.FK_Usuario_Rol" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Sucursal">
           <Key>
@@ -827,10 +799,6 @@
           <Property Type="String" Name="sEmail" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="sNombreEncargado" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" />
-          <NavigationProperty Name="Departamento" Relationship="DB_A06759_NOMINASModel.FK_Departamento_Sucursal" FromRole="Sucursal" ToRole="Departamento" />
-          <NavigationProperty Name="Direccion" Relationship="DB_A06759_NOMINASModel.FK_Sucursal_Direccion" FromRole="Sucursal" ToRole="Direccion" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_Sucursal" FromRole="Sucursal" ToRole="Empleado" />
-          <NavigationProperty Name="Empresa" Relationship="DB_A06759_NOMINASModel.FK_Sucursal_Empresa" FromRole="Sucursal" ToRole="Empresa" />
         </EntityType>
         <EntityType Name="TipoSalario">
           <Key>
@@ -839,7 +807,6 @@
           <Property Type="Int32" Name="nIdTipoSalario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sTipoSalario" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_TipoSalario" FromRole="TipoSalario" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="TipoTrabajador">
           <Key>
@@ -848,7 +815,6 @@
           <Property Type="Int32" Name="nIdTipoTrabajador" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="sTipoTrabajador" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DB_A06759_NOMINASModel.FK_Empleado_TipoTrabajador" FromRole="TipoTrabajador" ToRole="Empleado" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -863,8 +829,6 @@
           <Property Type="String" Name="sContraseña" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
           <Property Type="String" Name="nIdEmpresa" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Rol" Relationship="DB_A06759_NOMINASModel.FK_Usuario_Rol" FromRole="Usuario" ToRole="Rol" />
-          <NavigationProperty Name="UsuarioEmpresa" Relationship="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario" FromRole="Usuario" ToRole="UsuarioEmpresa" />
         </EntityType>
         <EntityType Name="UsuarioEmpresa">
           <Key>
@@ -874,8 +838,6 @@
           <Property Type="Int32" Name="nIdUsuario" Nullable="false" />
           <Property Type="Int32" Name="nIdEmpresa" Nullable="false" />
           <Property Type="Boolean" Name="bActivo" Nullable="false" />
-          <NavigationProperty Name="Empresa" Relationship="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Empresa" FromRole="UsuarioEmpresa" ToRole="Empresa" />
-          <NavigationProperty Name="Usuario" Relationship="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario" FromRole="UsuarioEmpresa" ToRole="Usuario" />
         </EntityType>
         <Association Name="FK_Empleado_CausaBaja">
           <End Type="DB_A06759_NOMINASModel.CausaBaja" Role="CausaBaja" Multiplicity="1" />

@@ -14,15 +14,8 @@ namespace NomiPlus.Modelo
     
     public partial class Rol
     {
-        public Rol()
-        {
-            this.Usuario = new HashSet<Usuario>();
-        }
-    
         public int nIdRol { get; set; }
         public string sDescripcion { get; set; }
         public bool bActivo { get; set; }
-    
-        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

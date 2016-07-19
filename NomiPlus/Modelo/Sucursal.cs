@@ -14,12 +14,6 @@ namespace NomiPlus.Modelo
     
     public partial class Sucursal
     {
-        public Sucursal()
-        {
-            this.Departamento = new HashSet<Departamento>();
-            this.Empleado = new HashSet<Empleado>();
-        }
-    
         public int nIdSucursal { get; set; }
         public string sNombreSucursal { get; set; }
         public int nIdDireccion { get; set; }
@@ -30,10 +24,5 @@ namespace NomiPlus.Modelo
         public string sEmail { get; set; }
         public string sNombreEncargado { get; set; }
         public Nullable<bool> bActivo { get; set; }
-    
-        public virtual ICollection<Departamento> Departamento { get; set; }
-        public virtual Direccion Direccion { get; set; }
-        public virtual ICollection<Empleado> Empleado { get; set; }
-        public virtual Empresa Empresa { get; set; }
     }
 }

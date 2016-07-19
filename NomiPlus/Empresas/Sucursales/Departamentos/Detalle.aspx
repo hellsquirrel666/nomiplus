@@ -20,7 +20,7 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvDepto" ControlToValidate="txtDepartamento" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                 <asp:RegularExpressionValidator runat="server" ID="revDepto" ControlToValidate="txtDepartamento" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.#\s\-]{1,150}" />
+                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.#\s\-\ ]{1,150}" />
             </td>
         </tr>
         <tr>
@@ -32,7 +32,7 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvResponsable" ControlToValidate="txtResponsable" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                 <asp:RegularExpressionValidator runat="server" ID="revResponsable" ControlToValidate="txtResponsable" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ9.s\-]{1,150}" />
+                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ9.s\-\ ]{1,150}" />
             </td>
         </tr>
         <tr>
@@ -68,7 +68,7 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvEmail" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
                 <asp:RegularExpressionValidator runat="server" ID="revEmail" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Formato incorrecto" ForeColor="Red"
-                    ValidationExpression="[a-züñáéíóúA-ZÜÑÁÉÍÓÚ0-9.#\s\-]{1,150}" />
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
             </td>
         </tr>
     </table>

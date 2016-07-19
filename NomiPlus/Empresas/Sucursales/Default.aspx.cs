@@ -27,6 +27,16 @@ namespace NomiPlus.Empresas.Sucursales
             }
         }
 
+        protected void btnNuevaEmpresa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresas/Sucursales/Detalle?Empresa=" + hfIdEmpresa.Value);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresas");
+        }
+
         public void InitializeControls()
         {
             var idEmpresa = Request.QueryString["Empresa"];
@@ -48,6 +58,7 @@ namespace NomiPlus.Empresas.Sucursales
                     }
                     else
                     {
+                        hfIdEmpresa.Value = idEmp.ToString();
                         lblNombre.Text = empresa.sRazonSocial;
 
                         SucursalLogic pl = new SucursalLogic();
@@ -66,16 +77,6 @@ namespace NomiPlus.Empresas.Sucursales
                  );
                 Response.Redirect("~/Empresas");
             }
-        }
-
-        protected void btnNuevaEmpresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

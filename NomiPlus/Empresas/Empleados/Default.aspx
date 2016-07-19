@@ -12,13 +12,30 @@
             <h3><asp:Label runat="server" ID="lblNombre" /></h3>
         </div>
         <div class="widget-content">
-            <asp:GridView runat="server" ID="gvEmpleados" CssClass="table table-condensed table-bordered table-hover" ItemType="NomiPlus.Modelo.Sucursal" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true">
+            <asp:HiddenField runat="server" ID="hfIdEmpresa" Visible="false" />
+            <asp:GridView runat="server" ID="gvEmpleados" CssClass="table table-condensed table-bordered table-hover" 
+                ItemType="NomiPlus.Modelo.Empleado" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true">
                 <Columns>
-                    <asp:BoundField HeaderText="Departamento" DataField="sDepartamento" />
-                    <asp:BoundField HeaderText="Encargado" DataField="sNombreEncargado" />
-                    <asp:BoundField HeaderText="Telefono" DataField="sTelefono" />
-                    <asp:BoundField HeaderText="E-mail" DataField="sEmailContacto" />
-                    <asp:BoundField HeaderText="Fax" DataField="sFax" />
+                    <asp:TemplateField HeaderText="Nombre completo">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%# Item.sPrimerApellido + " " +
+                            (string.IsNullOrEmpty(Item.sSegundoApellido)? "": Item.sSegundoApellido) + " " +
+                            Item.sNombre %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField HeaderText="RFC" DataField="sRFC" />
+                    <asp:BoundField HeaderText="CURP" DataField="sCURP" />
+                    <asp:BoundField HeaderText="NSS" DataField="nNSS" />
+                    <asp:TemplateField ItemStyle-CssClass="gridview_menu">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="lblSucursal" Text='<%# ObtenerSucursal(Item.nIdSucursal) %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-CssClass="gridview_menu">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="lblDepartamento" Text='<%# ObtenerDepartamento(Item.nIdDepartamento)%>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField ItemStyle-CssClass="gridview_menu">
                         <ItemTemplate>
                             <div class="dropdown" style="cursor: pointer;">
@@ -26,7 +43,7 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddmOpciones">
                                     <li role="presentation">
                                         <asp:LinkButton ID="lbtnEditar" runat="server" Text="Editar" 
-                                            PostBackUrl='<%# string.Format("~/Empresas/Empleados/Detalle?Empresa={0}&Departamento{1}",Item.nIdEmpresa , Item.nIdSucursal) %>'/>
+                                            PostBackUrl='<%# string.Format("~/Empresas/Empleados/Detalle?Empleado={0}",Item.nIdEmpleado) %>'/>
                                     </li>
                                 </ul>
                             </div>
@@ -34,6 +51,20 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+            </br>
+            <table style="width:100%;">
+            <tr>
+                <td style="text-align:right;">
+                    <asp:Button runat="server" ID="btnNuevoEmpreado" OnClick="btnNuevoEmpreado_Click"
+                        CssClass="btn btn-primary" Text="Nuevo empleado" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click"
+                        CssClass="btn btn-danger" Text="Regresar" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
         </div>
         <!-- /widget-content --> 
         </div>

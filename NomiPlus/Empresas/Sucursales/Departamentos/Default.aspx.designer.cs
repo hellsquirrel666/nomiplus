@@ -31,6 +31,24 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos {
         protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
+        /// hfIdSucursal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdSucursal;
+        
+        /// <summary>
+        /// hfIdEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpresa;
+        
+        /// <summary>
         /// gvDepartamentos control.
         /// </summary>
         /// <remarks>
@@ -40,13 +58,13 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos {
         protected global::System.Web.UI.WebControls.GridView gvDepartamentos;
         
         /// <summary>
-        /// btnNuevaEmpresa control.
+        /// btnNuevoDepartamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevaEmpresa;
+        protected global::System.Web.UI.WebControls.Button btnNuevoDepartamento;
         
         /// <summary>
         /// btnCancelar control.

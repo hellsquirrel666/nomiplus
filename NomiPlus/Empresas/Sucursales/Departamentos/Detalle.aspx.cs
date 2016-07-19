@@ -27,7 +27,7 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Empresas/Sucursales?Sucursal="+ hfIdSucursal);
+            Response.Redirect("~/Empresas/Sucursales/Departamentos/?Sucursal="+ hfIdSucursal.Value);
 
         }
 
@@ -77,7 +77,7 @@ namespace NomiPlus.Empresas.Sucursales.Departamentos
                             "MessageBox",
                             "<script language='javascript'>alert('" + "No se encontró la departamento." + "');</script>"
                          );
-                        Response.Redirect("~/Empresas/Sucursales?Sucursal="+ hfIdSucursal);
+                        Response.Redirect("~/Empresas/Sucursales?Sucursal="+ hfIdSucursal.Value);
                     }
                     lblAccion.Text = "Editar";
                     LlenarDepartamento(departamento);

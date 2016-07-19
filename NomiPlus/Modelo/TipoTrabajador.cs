@@ -14,15 +14,8 @@ namespace NomiPlus.Modelo
     
     public partial class TipoTrabajador
     {
-        public TipoTrabajador()
-        {
-            this.Empleado = new HashSet<Empleado>();
-        }
-    
         public int nIdTipoTrabajador { get; set; }
         public string sTipoTrabajador { get; set; }
         public bool bActivo { get; set; }
-    
-        public virtual ICollection<Empleado> Empleado { get; set; }
     }
 }

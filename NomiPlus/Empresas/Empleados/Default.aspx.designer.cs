@@ -31,6 +31,15 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
+        /// hfIdEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpresa;
+        
+        /// <summary>
         /// gvEmpleados control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,23 @@ namespace NomiPlus.Empresas.Empleados {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvEmpleados;
+        
+        /// <summary>
+        /// btnNuevoEmpreado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNuevoEmpreado;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }
