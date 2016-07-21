@@ -2,6 +2,7 @@
 using NomiPlus.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -41,7 +42,7 @@ namespace NomiPlus.Empresas.Empleados
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/");
+            Response.Redirect(string.Format("~/Empresas/Empleados?Empresa={0}",hfIdEmpresa.Value));
         }
 
         protected void txtCodigoPostal_TextChanged(object sender, EventArgs e)
@@ -49,30 +50,66 @@ namespace NomiPlus.Empresas.Empleados
             IncializaDdlDirecciones();
         }
 
+        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargaDdlDepartamentos();
+        }
+
         #region Metodos
         private void InitializeControls()
         {
+            var idEmpresa = Request.QueryString["Empresa"];
             var idEmpleado = Request.QueryString["Empleado"];
+            if (!string.IsNullOrEmpty(idEmpresa))
+            {
+                int idEmpr;
+                if (int.TryParse(idEmpresa, out idEmpr))
+                {
+                    EmpresaLogic eml = new EmpresaLogic();
+                    var empresa = eml.ObtenerEmpresa(idEmpr);
+                    hfIdEmpresa.Value = empresa.nIdEmpresa.ToString();
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(
+                        Page.GetType(),
+                        "MessageBox",
+                        "<script language='javascript'>alert('" + "No se encontró la empresa." + "');</script>"
+                    );
+                    Response.Redirect("~/Empresas");
+
+                }
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(
+                    Page.GetType(),
+                    "MessageBox",
+                    "<script language='javascript'>alert('" + "No se encontró la empresa." + "');</script>"
+                 );
+                Response.Redirect("~/Empresas");
+
+            }
             if (!string.IsNullOrEmpty(idEmpleado))
             {
                 int idPac;
                 if (int.TryParse(idEmpleado, out idPac))
                 {
                     EmpleadoLogic pl = new EmpleadoLogic();
-                    Empleado empresa = pl.ObtenerEmpleado(int.Parse(idEmpleado));
-                    if (empresa == null)
+                    Empleado empleado = pl.ObtenerEmpleado(int.Parse(idEmpleado));
+                    if (empleado == null)
                     {
                         Page.ClientScript.RegisterStartupScript(
                             Page.GetType(),
                             "MessageBox",
                             "<script language='javascript'>alert('" + "No se encontró el empleado." + "');</script>"
                          );
-                        Response.Redirect("~/");
+                        Response.Redirect("~/Empresas");
                     }
                     else
                     {
                         DireccionLogic dl = new DireccionLogic();
-                        Direccion dir = dl.ObtenerDireccion(empresa.nIdDireccion);
+                        Direccion dir = dl.ObtenerDireccion(empleado.nIdDireccion);
                         if (dir == null)
                         {
                             Page.ClientScript.RegisterStartupScript(
@@ -80,22 +117,25 @@ namespace NomiPlus.Empresas.Empleados
                                 "MessageBox",
                                 "<script language='javascript'>alert('" + "No se encontró la dirección del empleado." + "');</script>"
                              );
-                            Response.Redirect("~/");
+                            Response.Redirect("~/Empresas");
                         }
                         lblAccion.Text = "Editar";
-                        LlenarEmpleado(empresa, dir);
+                        IncializaDdls();
+                        LlenarEmpleado(empleado, dir);
                     }
                 }
             }
             else
             {
+                IncializaDdls();
                 lblAccion.Text = "Nuevo";
             }
         }
 
         public Empleado ObtenerEmpleado(int idDireccion)
         {
-            Empleado empresa = new Empleado()
+            
+            Empleado empleado = new Empleado()
             {
                 nIdEmpleado = string.IsNullOrEmpty(hfIdEmpleado.Value) ? default(int) : int.Parse(hfIdEmpleado.Value),
                 sPrimerApellido = txtPaterno.Text,
@@ -112,19 +152,19 @@ namespace NomiPlus.Empresas.Empleados
                 nIdTipoSalario = int.Parse(ddlTipoSalario.SelectedValue),
                 nIdEstadoNacimiento = int.Parse(ddlLugarDeNacimiento.SelectedValue),
                 sUMF = txtUMF.Text,
-                dFechaAltaIMSS = DateTime.Parse(txtFechaAltaImss.Text),
-                nSalarioDiario = int.Parse(txtSalarioDiario.Text), 
-                nSDI = int.Parse(txtSDI.Text),
-                dFechaBaja = DateTime.Parse(txtFechaBaja.Text),
+                dFechaAltaIMSS = string.IsNullOrEmpty(txtFechaAltaImss.Text) ? (DateTime?)null : DateTime.Parse(txtFechaAltaImss.Text),
+                nSalarioDiario = decimal.Parse(txtSalarioDiario.Text), 
+                nSDI = decimal.Parse(txtSDI.Text),
+                dFechaBaja = string.IsNullOrEmpty(txtFechaBaja.Text) ? (DateTime?)null : DateTime.Parse(txtFechaBaja.Text),
                 nIdCausaBaja = int.Parse(ddlClaveCausaBaja.SelectedValue),
-                dFechaReingreso = DateTime.Parse(txtReingreso.Text),
-                nIdOcupacion = int.Parse(txtClaveOcupacion.Text),
+                dFechaReingreso = string.IsNullOrEmpty(txtReingreso.Text) ? (DateTime?)null : DateTime.Parse(txtReingreso.Text),
+                nIdOcupacion = int.Parse(ddlClaveOcupacion.Text),
                 nIdSucursal = int.Parse(ddlSucursal.SelectedValue),
                 nIdDepartamento = int.Parse(ddlDepartamento.SelectedValue),
                 bActivo = true,
                 nIdDireccion = idDireccion
             };
-            return empresa;
+            return empleado;
         }
 
         public Direccion ObtenerDireccion()
@@ -155,16 +195,20 @@ namespace NomiPlus.Empresas.Empleados
                 ddlColonia.DataSource = colonias;
                 ddlColonia.DataBind();
 
-
-
                 //obtiene municipios, ciudades y estados que coinciden con CP
                 var municipios = (from c in _dataModel.Colonia
                                   join m in _dataModel.Municipio on c.nIdMunicipio equals m.nIdMunicipio
                                   join ciu in _dataModel.Ciudad on m.nIdCiudad equals ciu.nIdCiudad
                                   join e in _dataModel.Estado on ciu.nIdEstado equals e.nIdEstado
-                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && e.nIdEstado == (ciu.nIdEstado)
+                                  where c.sCP.Equals(txtCodigoPostal.Text) && c.nIdCiudad == (m.nIdCiudad) && m.nIdEstado == (ciu.nIdEstado) && c.nIdEstado == m.nIdEstado
                                   select new { m.nIdMunicipio, m.sMunicpio, ciu.nIdCiudad, ciu.sCiudad, e.nIdEstado, e.sEstado }
                              ).Distinct().ToList();
+
+                //llena ddlDelegacion
+                ddlDelegacion.DataValueField = "nIdMunicipio";
+                ddlDelegacion.DataTextField = "sMunicpio";
+                ddlDelegacion.DataSource = municipios;
+                ddlDelegacion.DataBind();
 
                 //llena ddlCiudad
                 ddlCiudad.DataValueField = "nIdCiudad";
@@ -191,30 +235,89 @@ namespace NomiPlus.Empresas.Empleados
             txtCURP.Text = empleado.sCURP;
             txtNumSeguro.Text = empleado.nNSS;
             txtInfonavit.Text = empleado.nNoInfonavit;
-            txtFechaRegistro.Text = empleado.sFecharegistro.ToString("yyyy-MM-dd");
+            txtFechaRegistro.Text = empleado.sFecharegistro.ToString("dd/MM/yyyy");
             ddlSexo.SelectedValue = empleado.sSexo;
             ddlTipoTrabajador.SelectedValue = empleado.nIdTipoTrabajador.ToString();
             ddlTipoSalario.SelectedValue = empleado.nIdTipoSalario.ToString();
             ddlLugarDeNacimiento.SelectedValue = empleado.nIdEstadoNacimiento.ToString();
             txtUMF.Text = empleado.sUMF;
-            txtFechaAltaImss.Text = empleado.dFechaAltaIMSS.ToString();
-            txtSalarioDiario.Text = empleado.nSalarioDiario.ToString();
-            txtSDI.Text = empleado.nSDI.ToString();
-            txtFechaBaja.Text = empleado.dFechaBaja.ToString();
+            txtFechaAltaImss.Text = string.IsNullOrEmpty(empleado.dFechaAltaIMSS.ToString()) ? "" : empleado.dFechaAltaIMSS.Value.ToString("dd/MM/yyyy");
+            txtSalarioDiario.Text = string.Format("{0:F2}", empleado.nSalarioDiario);
+            txtSDI.Text = string.Format("{0:F2}", empleado.nSDI);
+            txtFechaBaja.Text = string.IsNullOrEmpty(empleado.dFechaBaja.ToString()) ? "" : empleado.dFechaBaja.Value.ToString("dd/MM/yyyy");
             ddlClaveCausaBaja.SelectedValue = empleado.nIdCausaBaja.ToString();
-            txtFechaRegistro.Text = empleado.dFechaReingreso.ToString();
-            txtClaveOcupacion.Text = empleado.nIdOcupacion.ToString();
+            txtReingreso.Text = string.IsNullOrEmpty(empleado.dFechaReingreso.ToString()) ? "" : empleado.dFechaReingreso.Value.ToString("dd/MM/yyyy");
+            ddlClaveOcupacion.SelectedValue = empleado.nIdOcupacion.ToString();
             ddlSucursal.SelectedValue = empleado.nIdSucursal.ToString();
             ddlDepartamento.SelectedValue = empleado.nIdDepartamento.ToString();
 
             hfIdDireccion.Value = empleado.nIdDireccion.ToString();
 
+            txtCalle.Text = dir.sCalle;
+            txtNumeroExterior.Text = dir.sNoExterno;
+            txtNumeroInterior.Text = dir.sNoInterno;
             using (var db = new DB_A06759_NOMINASEntities())
             {
                 var colonia = db.Colonia.Where(c => c.nIdColonia == dir.nIdColonia).FirstOrDefault();
                 txtCodigoPostal.Text = colonia.sCP;
             }
             txtCodigoPostal_TextChanged(this, EventArgs.Empty);
+        }
+
+        public void IncializaDdls()
+        {
+            PeriodicidadLogic pl = new PeriodicidadLogic();
+            ddlPeriodicidad.DataTextField = "sPeriodicidad";
+            ddlPeriodicidad.DataValueField = "nIdPeriodicidad";
+            ddlPeriodicidad.DataSource = pl.ListaPeriodicidades();
+            ddlPeriodicidad.DataBind();
+            
+            TipoTrabajadorLogic ttl = new TipoTrabajadorLogic();
+            ddlTipoTrabajador.DataTextField = "sTipoTrabajador";
+            ddlTipoTrabajador.DataValueField = "nIdTipoTrabajador";
+            ddlTipoTrabajador.DataSource = ttl.ListaTipoTrabajadores();
+            ddlTipoTrabajador.DataBind();
+            
+            TipoSalarioLogic tsl = new TipoSalarioLogic();
+            ddlTipoSalario.DataTextField = "sTipoSalario";
+            ddlTipoSalario.DataValueField = "nIdTipoSalario";
+            ddlTipoSalario.DataSource = tsl.ListaTipoSalarioes();
+            ddlTipoSalario.DataBind();
+            
+            EstadoLogic edol = new EstadoLogic();
+            ddlLugarDeNacimiento.DataTextField = "sEstado";
+            ddlLugarDeNacimiento.DataValueField = "nIdEstado";
+            ddlLugarDeNacimiento.DataSource = edol.ListaEstados();
+            ddlLugarDeNacimiento.DataBind();
+            
+            SucursalLogic sl = new SucursalLogic();
+            ddlSucursal.DataTextField = "sNombreSucursal";
+            ddlSucursal.DataValueField = "nIdSucursal";
+            ddlSucursal.DataSource = sl.ListaSucursales().Where(x => x.nIdEmpresa == int.Parse(hfIdEmpresa.Value));
+            ddlSucursal.DataBind();
+
+            CausaBajaLogic cbl = new CausaBajaLogic();
+            ddlClaveCausaBaja.DataTextField = "sCausaBaja";
+            ddlClaveCausaBaja.DataValueField = "nIdCausaBaja";
+            ddlClaveCausaBaja.DataSource = cbl.ListaCausaBaja();
+            ddlClaveCausaBaja.DataBind();
+
+            OcupacionesLogic ol = new OcupacionesLogic();
+            ddlClaveOcupacion.DataTextField = "sOcupacion";
+            ddlClaveOcupacion.DataValueField = "nIdOcupacion";
+            ddlClaveOcupacion.DataSource = ol.ListaOcupaciones();
+            ddlClaveOcupacion.DataBind();
+
+            ddlSucursal_SelectedIndexChanged(this, null);
+        }
+
+        public void CargaDdlDepartamentos()
+        {
+            DepartamentoLogic dl = new DepartamentoLogic();
+            ddlDepartamento.DataTextField = "sDepartamento";
+            ddlDepartamento.DataValueField = "nIdDepartamento";
+            ddlDepartamento.DataSource = dl.ListaDepartamentos().Where(x=>x.nIdSucursal == int.Parse(ddlSucursal.SelectedValue));
+            ddlDepartamento.DataBind();
         }
         #endregion
     }

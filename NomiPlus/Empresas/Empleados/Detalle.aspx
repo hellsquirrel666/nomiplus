@@ -12,8 +12,9 @@
     <table style="width:100%">
         <tr>
             <td>
-                <asp:HiddenField runat="server" ID="hfIdDireccion" Visible="true" />
-                <asp:HiddenField runat="server" ID="hfIdEmpleado" Visible="true" />
+                <asp:HiddenField runat="server" ID="hfIdDireccion" Visible="false" />
+                <asp:HiddenField runat="server" ID="hfIdEmpleado" Visible="false" />
+                <asp:HiddenField runat="server" ID="hfIdEmpresa" Visible="false" />
             </td>
             <td />
         </tr>
@@ -53,7 +54,7 @@
                 <span class="help" title="Este valor no se utiliza para cálculos.">Periodicidad de pago</span>
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlPeriodicidad" CssClass="form-control" width="200px" />
+                <asp:DropDownList runat="server" ID="ddlPeriodicidad" CssClass="form-control" width="210px" />
             </td>
             <td>
             </td>
@@ -115,7 +116,7 @@
             <td>Sexo
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlSexo" AppendDataBoundItems="true" CssClass="form-control" width="200px">
+                <asp:DropDownList runat="server" ID="ddlSexo" AppendDataBoundItems="true" CssClass="form-control" width="210px">
                     <asp:ListItem Text="Hombre" Value="H" />
                     <asp:ListItem Text="Mujer" Value="M" />
                 </asp:DropDownList>
@@ -125,14 +126,14 @@
             <td>Tipo de trabajador
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlTipoTrabajador" CssClass="form-control" width="200px" />
+                <asp:DropDownList runat="server" ID="ddlTipoTrabajador" CssClass="form-control" width="210px" />
             </td>
             <td>
             </td>
             <td>Tipo de salario
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlTipoSalario" CssClass="form-control" width="200px" />
+                <asp:DropDownList runat="server" ID="ddlTipoSalario" CssClass="form-control" width="210px" />
             </td>
             <td>
             </td>
@@ -141,7 +142,7 @@
             <td>Lugar de nacimiento
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlLugarDeNacimiento" CssClass="form-control" width="200px" />
+                <asp:DropDownList runat="server" ID="ddlLugarDeNacimiento" CssClass="form-control" width="210px" />
             </td>
             <td>
             </td>
@@ -163,7 +164,7 @@
             <td>Codigo postal
             </td>
             <td>
-                <asp:TextBox runat="server" ID="txtCodigoPostal" CssClass="form-control" MaxLength="5" width="200px" />
+                <asp:TextBox runat="server" ID="txtCodigoPostal" CssClass="form-control" MaxLength="5" width="200px" AutoPostBack="true" OnTextChanged="txtCodigoPostal_TextChanged" />
             </td>
             <td>
                 <asp:RegularExpressionValidator ID="revCodigoPostal" runat="server" ControlToValidate="txtCodigoPostal" Display="Dynamic" ErrorMessage="Formato incorrecto." ForeColor="Red"
@@ -208,6 +209,15 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvColonia" ControlToValidate="ddlColonia" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
+            <td>
+                Delegacion / Municipio:
+            </td>
+            <td>
+                <asp:DropDownList runat="server" CssClass="form-control" ID="ddlDelegacion" Width="210px"></asp:DropDownList>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
             <td>Ciudad
             </td>
             <td>
@@ -216,8 +226,6 @@
             <td>
                 <asp:RequiredFieldValidator runat="server" ID="rfvCiudad" ControlToValidate="ddlCiudad" Display="Dynamic" ErrorMessage="*" ForeColor="Red" SetFocusOnError="True" />
             </td>
-        </tr>
-        <tr>
             <td>Estado
             </td>
             <td>
@@ -236,6 +244,8 @@
                 <asp:RequiredFieldValidator runat="server" ID="rfvSalario" ControlToValidate="txtSalarioDiario" ErrorMessage="*" ForeColor="Red" Display="Dynamic" 
                     ValidationGroup="RDIE"/>
             </td>
+        </tr>
+        <tr>
             <td>SDI
             </td>
             <td>
@@ -245,8 +255,6 @@
                 <asp:RequiredFieldValidator runat="server" ID="rfvSDI" ControlToValidate="txtSDI" ErrorMessage="*" ForeColor="Red" Display="Dynamic" 
                     ValidationGroup="RDIE"/>
             </td>
-        </tr>
-        <tr>
             <td>Fecha Baja
             </td>
             <td>
@@ -257,10 +265,12 @@
             <td>Causa baja
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlClaveCausaBaja" CssClass="form-control" width="200px" />
+                <asp:DropDownList runat="server" ID="ddlClaveCausaBaja" CssClass="form-control" width="210px" />
             </td>
             <td>
             </td>
+        </tr>
+        <tr>
             <td>Fecha Reingreso
             </td>
             <td>
@@ -268,30 +278,28 @@
             </td>
             <td>
             </td>
-        </tr>
-        <tr>
             <td>Ocupacion
             </td>
             <td>
-                <asp:TextBox runat="server" ID="txtClaveOcupacion" CssClass="form-control" width="200px" MaxLength="5" />
+                <asp:DropDownList runat="server" ID="ddlClaveOcupacion" CssClass="form-control" width="210px" />
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revClaveOcupacion" runat="server" ControlToValidate="txtClaveOcupacion" Display="Dynamic" ErrorMessage="Formato incorrecto." ForeColor="Red"
-                    ValidationExpression="[0-9]{1,5}" />
             </td>                    
             <td>
                 Sucursal:
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlSucursal" width="200px" CssClass="form-control" />
+                <asp:DropDownList runat="server" ID="ddlSucursal" width="210px" CssClass="form-control" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged" AutoPostBack="true" />
             </td>
             <td>
             </td>
+        </tr>
+        <tr>
             <td>
                 Departamento:
             </td>
             <td>
-                <asp:DropDownList runat="server" ID="ddlDepartamento" width="200px" CssClass="form-control" />
+                <asp:DropDownList runat="server" ID="ddlDepartamento" width="210px" CssClass="form-control" />
             </td>
             <td>
             </td>
@@ -305,7 +313,7 @@
                 <asp:Button runat="server" ID="btnAceptar" OnClick="btnAceptar_Click" Text="Guardar" CssClass="btn btn-primary"
                     OnClientClick="return Validate('¿Estás seguro que deseas guardar datos de la empresa?');" ValidationGroup="Validators" />
                 &nbsp;&nbsp;&nbsp;
-                <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-secondary" CausesValidation="False"
+                <asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Cancelar" CssClass="btn btn-danger" CausesValidation="False"
                     OnClientClick="return confirm('¿Estás seguro que deseas volver sin guardar los cambios?');" />
             </td>
         </tr>

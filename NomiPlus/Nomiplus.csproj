@@ -319,11 +319,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LogicObjects\CausaBajaLogic.cs" />
     <Compile Include="LogicObjects\DepartamentoLogic.cs" />
     <Compile Include="LogicObjects\DireccionLogic.cs" />
     <Compile Include="LogicObjects\EmpleadoLogic.cs" />
     <Compile Include="LogicObjects\EmpresaLogic.cs" />
+    <Compile Include="LogicObjects\EstadoLogic.cs" />
+    <Compile Include="LogicObjects\OcupacionesLogic.cs" />
+    <Compile Include="LogicObjects\PeriodicidadLogic.cs" />
     <Compile Include="LogicObjects\SucursalLogic.cs" />
+    <Compile Include="LogicObjects\TipoSalarioLogic.cs" />
+    <Compile Include="LogicObjects\TipoTrabajadorLogic.cs" />
     <Compile Include="Modelo\CausaBaja.cs">
       <DependentUpon>NomiPlusDB.tt</DependentUpon>
     </Compile>

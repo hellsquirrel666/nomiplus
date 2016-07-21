@@ -26,12 +26,12 @@
                     <asp:BoundField HeaderText="RFC" DataField="sRFC" />
                     <asp:BoundField HeaderText="CURP" DataField="sCURP" />
                     <asp:BoundField HeaderText="NSS" DataField="nNSS" />
-                    <asp:TemplateField ItemStyle-CssClass="gridview_menu">
+                    <asp:TemplateField ItemStyle-CssClass="gridview_menu" HeaderText="Sucursal">
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblSucursal" Text='<%# ObtenerSucursal(Item.nIdSucursal) %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField ItemStyle-CssClass="gridview_menu">
+                    <asp:TemplateField ItemStyle-CssClass="gridview_menu" HeaderText="Departamento">
                         <ItemTemplate>
                             <asp:Label runat="server" ID="lblDepartamento" Text='<%# ObtenerDepartamento(Item.nIdDepartamento)%>'></asp:Label>
                         </ItemTemplate>
@@ -43,7 +43,7 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddmOpciones">
                                     <li role="presentation">
                                         <asp:LinkButton ID="lbtnEditar" runat="server" Text="Editar" 
-                                            PostBackUrl='<%# string.Format("~/Empresas/Empleados/Detalle?Empleado={0}",Item.nIdEmpleado) %>'/>
+                                            PostBackUrl='<%# string.Format("~/Empresas/Empleados/Detalle?Empresa={0}&Empleado={1}", hfIdEmpresa.Value ,Item.nIdEmpleado) %>'/>
                                     </li>
                                 </ul>
                             </div>
@@ -52,6 +52,7 @@
                 </Columns>
             </asp:GridView>
             </br>
+            <br />
             <table style="width:100%;">
             <tr>
                 <td style="text-align:right;">
@@ -65,6 +66,7 @@
                 </td>
             </tr>
         </table>
+            <br />
         </div>
         <!-- /widget-content --> 
         </div>

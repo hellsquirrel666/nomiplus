@@ -40,6 +40,7 @@
                 </Columns>
             </asp:GridView>
             </br>
+            <br />
             <table style="width:100%;">
                 <tr>
                     <td style="text-align:right;">
@@ -53,6 +54,7 @@
                     </td>
                 </tr>
             </table>
+            <br />
         </div>
         <!-- /widget-content --> 
         </div>

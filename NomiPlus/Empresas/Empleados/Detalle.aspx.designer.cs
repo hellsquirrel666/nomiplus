@@ -40,6 +40,15 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.HiddenField hfIdEmpleado;
         
         /// <summary>
+        /// hfIdEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdEmpresa;
+        
+        /// <summary>
         /// txtNombre control.
         /// </summary>
         /// <remarks>
@@ -418,6 +427,15 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvColonia;
         
         /// <summary>
+        /// ddlDelegacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDelegacion;
+        
+        /// <summary>
         /// ddlCiudad control.
         /// </summary>
         /// <remarks>
@@ -517,22 +535,13 @@ namespace NomiPlus.Empresas.Empleados {
         protected global::System.Web.UI.WebControls.TextBox txtReingreso;
         
         /// <summary>
-        /// txtClaveOcupacion control.
+        /// ddlClaveOcupacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClaveOcupacion;
-        
-        /// <summary>
-        /// revClaveOcupacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revClaveOcupacion;
+        protected global::System.Web.UI.WebControls.DropDownList ddlClaveOcupacion;
         
         /// <summary>
         /// ddlSucursal control.

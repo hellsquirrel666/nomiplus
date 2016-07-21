@@ -91,7 +91,7 @@ namespace NomiPlus.Empresas.Empleados
         {
             DepartamentoLogic dl = new DepartamentoLogic();
             Departamento departamento = dl.ObtenerDepartamento(idDepartamento);
-            return departamento.sNombreEncargado;
+            return departamento.sDepartamento;
         }
 
     }
