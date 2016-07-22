@@ -13,14 +13,7 @@
     <div class="widget">
         <div class="widget-header">
             <i class="icon-bar-chart"></i>
-            <h3>
-                Menú</h3>
-        </div>
-    </div>
-
-    <div class="widget">
-        <div class="widget-header"> <i class="icon-bookmark"></i>
-            <h3>Important Shortcuts</h3>
+            <h3>Menú</h3>
         </div>
         <!-- /widget-header -->
         <div class="widget-content">
@@ -58,6 +51,7 @@
                     <span class="shortcut-label">Tags</span> 
                 </a> 
             </div>
+
             <!-- /shortcuts --> 
         </div>
         <!-- /widget-content --> 
