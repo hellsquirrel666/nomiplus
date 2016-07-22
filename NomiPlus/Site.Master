@@ -7,7 +7,9 @@
     <head id="Head1" runat="server">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%: Page.Title %></title>
+
+        <asp:ContentPlaceHolder runat="server" ID="head" />
+        <title><%-- El título se setea manualmente vía asp:Content en las páginas de contenido --%></title>
 
         <asp:PlaceHolder ID="PlaceHolder1" runat="server">
             <%: Scripts.Render("~/bundles/modernizr") %>

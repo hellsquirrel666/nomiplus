@@ -1,4 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Detalle.aspx.cs" Inherits="NomiPlus.Empresas.Empleados.Detalle" %>
+
+<asp:Content ID="header" ContentPlaceHolderID="head" runat="Server">
+    <title><%: Request.QueryString["Empkeado"] == null ? "Nuevo Empleado" : "Editar Empleado" %>  </title>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <div class="jumbotron jumbotron-small">
