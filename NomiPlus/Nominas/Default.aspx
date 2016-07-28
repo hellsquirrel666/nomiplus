@@ -18,17 +18,17 @@
         <!-- /widget-header -->
         <div class="widget-content">
             <div class="shortcuts"> 
-                <a href="javascript:;" class="shortcut">
+                <a href="~/Nominas/VerNominas" class="shortcut">
                     <i class="shortcut-icon icon-list-alt"></i>
-                    <span class="shortcut-label">Apps</span> 
+                    <span class="shortcut-label">Ver Nóminas</span> 
                 </a>
-                <a href="javascript:;" class="shortcut">
+                <a href="~/Nominas/NuevaNomina" class="shortcut">
                     <i class="shortcut-icon icon-bookmark"></i>
-                    <span class="shortcut-label">Bookmarks</span> 
+                    <span class="shortcut-label">Nueva Nómina</span> 
                 </a>
                 <a href="javascript:;" class="shortcut">
                     <i class="shortcut-icon icon-signal"></i> 
-                    <span class="shortcut-label">Reports</span> 
+                    <span class="shortcut-label"></span> 
                 </a>
                 <a href="javascript:;" class="shortcut"> 
                     <i class="shortcut-icon icon-comment"></i>
