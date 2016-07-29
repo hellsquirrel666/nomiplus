@@ -15,6 +15,7 @@
           <EntitySet Name="Empresa" EntityType="DB_A06759_NOMINASModel.Store.Empresa" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Estado" EntityType="DB_A06759_NOMINASModel.Store.Estado" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Municipio" EntityType="DB_A06759_NOMINASModel.Store.Municipio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nomina" EntityType="DB_A06759_NOMINASModel.Store.Nomina" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Ocupaciones" EntityType="DB_A06759_NOMINASModel.Store.Ocupaciones" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pais" EntityType="DB_A06759_NOMINASModel.Store.Pais" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Periodicidad" EntityType="DB_A06759_NOMINASModel.Store.Periodicidad" store:Type="Tables" Schema="dbo" />
@@ -79,6 +80,10 @@
           <AssociationSet Name="FK_Estado_Pais" Association="DB_A06759_NOMINASModel.Store.FK_Estado_Pais">
             <End Role="Pais" EntitySet="Pais" />
             <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nomina_Empresa" Association="DB_A06759_NOMINASModel.Store.FK_Nomina_Empresa">
+            <End Role="Nomina" EntitySet="Nomina" />
+            <End Role="Nomina1" EntitySet="Nomina" />
           </AssociationSet>
           <AssociationSet Name="FK_Sucursal_Direccion" Association="DB_A06759_NOMINASModel.Store.FK_Sucursal_Direccion">
             <End Role="Direccion" EntitySet="Direccion" />
@@ -220,6 +225,19 @@
           <Property Name="sMunicpio" Type="nvarchar" Nullable="false" MaxLength="200" />
           <Property Name="nIdCiudad" Type="int" Nullable="false" />
           <Property Name="nIdEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nomina">
+          <Key>
+            <PropertyRef Name="nIdNomina" />
+          </Key>
+          <Property Name="nIdNomina" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nIdEmpresa" Type="int" Nullable="false" />
+          <Property Name="sNombre" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="dFechaRegistro" Type="date" Nullable="false" />
+          <Property Name="dFechaFin" Type="date" Nullable="false" />
+          <Property Name="dFechaInicio" Type="date" Nullable="false" />
+          <Property Name="nEsquemaPago" Type="int" Nullable="false" />
+          <Property Name="sEstatus" Type="nvarchar" Nullable="false" MaxLength="20" />
         </EntityType>
         <EntityType Name="Ocupaciones">
           <Key>
@@ -474,6 +492,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Nomina_Empresa">
+          <End Role="Nomina" Type="DB_A06759_NOMINASModel.Store.Nomina" Multiplicity="1" />
+          <End Role="Nomina1" Type="DB_A06759_NOMINASModel.Store.Nomina" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomina">
+              <PropertyRef Name="nIdNomina" />
+            </Principal>
+            <Dependent Role="Nomina1">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sucursal_Direccion">
           <End Role="Direccion" Type="DB_A06759_NOMINASModel.Store.Direccion" Multiplicity="1" />
           <End Role="Sucursal" Type="DB_A06759_NOMINASModel.Store.Sucursal" Multiplicity="*" />
@@ -632,6 +662,11 @@
           <AssociationSet Name="FK_UsuarioEmpresa_Usuario" Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="UsuarioEmpresa" EntitySet="UsuarioEmpresa" />
+          </AssociationSet>
+          <EntitySet Name="Nomina" EntityType="DB_A06759_NOMINASModel.Nomina" />
+          <AssociationSet Name="FK_Nomina_Empresa" Association="DB_A06759_NOMINASModel.FK_Nomina_Empresa">
+            <End Role="Nomina" EntitySet="Nomina" />
+            <End Role="Nomina1" EntitySet="Nomina" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CausaBaja">
@@ -1067,6 +1102,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Nomina">
+          <Key>
+            <PropertyRef Name="nIdNomina" />
+          </Key>
+          <Property Type="Int32" Name="nIdNomina" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="nIdEmpresa" Nullable="false" />
+          <Property Type="String" Name="sNombre" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dFechaRegistro" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="dFechaFin" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="dFechaInicio" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="nEsquemaPago" Nullable="false" />
+          <Property Type="String" Name="sEstatus" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Nomina1" Relationship="DB_A06759_NOMINASModel.FK_Nomina_Empresa" FromRole="Nomina" ToRole="Nomina1" />
+          <NavigationProperty Name="Nomina2" Relationship="DB_A06759_NOMINASModel.FK_Nomina_Empresa" FromRole="Nomina1" ToRole="Nomina" />
+        </EntityType>
+        <Association Name="FK_Nomina_Empresa">
+          <End Type="DB_A06759_NOMINASModel.Nomina" Role="Nomina" Multiplicity="1" />
+          <End Type="DB_A06759_NOMINASModel.Nomina" Role="Nomina1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomina">
+              <PropertyRef Name="nIdNomina" />
+            </Principal>
+            <Dependent Role="Nomina1">
+              <PropertyRef Name="nIdEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1290,6 +1352,20 @@
                 <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
                 <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
                 <ScalarProperty Name="nIdUsuarioEmpresa" ColumnName="nIdUsuarioEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nomina">
+            <EntityTypeMapping TypeName="DB_A06759_NOMINASModel.Nomina">
+              <MappingFragment StoreEntitySet="Nomina">
+                <ScalarProperty Name="sEstatus" ColumnName="sEstatus" />
+                <ScalarProperty Name="nEsquemaPago" ColumnName="nEsquemaPago" />
+                <ScalarProperty Name="dFechaInicio" ColumnName="dFechaInicio" />
+                <ScalarProperty Name="dFechaFin" ColumnName="dFechaFin" />
+                <ScalarProperty Name="dFechaRegistro" ColumnName="dFechaRegistro" />
+                <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+                <ScalarProperty Name="nIdEmpresa" ColumnName="nIdEmpresa" />
+                <ScalarProperty Name="nIdNomina" ColumnName="nIdNomina" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

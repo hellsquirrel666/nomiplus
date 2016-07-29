@@ -43,6 +43,8 @@
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Estado_Pais" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Usuario_Rol" />
         <AssociationConnector Association="DB_A06759_NOMINASModel.FK_UsuarioEmpresa_Usuario" />
+        <EntityTypeShape EntityType="DB_A06759_NOMINASModel.Nomina" Width="1.5" PointX="11.122918864303696" PointY="31.13276877958922" />
+        <AssociationConnector Association="DB_A06759_NOMINASModel.FK_Nomina_Empresa" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

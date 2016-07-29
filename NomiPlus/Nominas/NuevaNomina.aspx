@@ -58,8 +58,7 @@
                 <tr>
                     <td>Fecha de fin:</td>
                     <td>
-                        <asp:TextBox runat="server" ID="txtFechaFin" CssClass="icon-calendar" TextMode="Date" 
-                            Enabled="false"/>
+                        <asp:TextBox runat="server" ID="txtFechaFin" CssClass="icon-calendar" TextMode="Date"/>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator runat="server" ID="rfvFechaFin" Display="Dynamic" 

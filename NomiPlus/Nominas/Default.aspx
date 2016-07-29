@@ -22,7 +22,7 @@
                     <i class="shortcut-icon icon-list-alt"></i>
                     <span class="shortcut-label">Ver Nóminas</span> 
                 </a>
-                <a href="~/Nominas/NuevaNomina" class="shortcut">
+                <a href=<%=Page.ResolveUrl("~/Nominas/NuevaNomina")%> class="shortcut">
                     <i class="shortcut-icon icon-bookmark"></i>
                     <span class="shortcut-label">Nueva Nómina</span> 
                 </a>

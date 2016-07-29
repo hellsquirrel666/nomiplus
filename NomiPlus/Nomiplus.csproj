@@ -327,6 +327,7 @@
     <Compile Include="LogicObjects\EmpleadoLogic.cs" />
     <Compile Include="LogicObjects\EmpresaLogic.cs" />
     <Compile Include="LogicObjects\EstadoLogic.cs" />
+    <Compile Include="LogicObjects\NominaLogic.cs" />
     <Compile Include="LogicObjects\OcupacionesLogic.cs" />
     <Compile Include="LogicObjects\PeriodicidadLogic.cs" />
     <Compile Include="LogicObjects\SucursalLogic.cs" />
@@ -357,6 +358,9 @@
       <DependentUpon>NomiPlusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Municipio.cs">
+      <DependentUpon>NomiPlusDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Nomina.cs">
       <DependentUpon>NomiPlusDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\NomiPlusDB.Context.cs">

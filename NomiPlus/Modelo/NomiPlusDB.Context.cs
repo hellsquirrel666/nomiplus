@@ -43,5 +43,6 @@ namespace NomiPlus.Modelo
         public DbSet<TipoTrabajador> TipoTrabajador { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<UsuarioEmpresa> UsuarioEmpresa { get; set; }
+        public DbSet<Nomina> Nomina { get; set; }
     }
 }
